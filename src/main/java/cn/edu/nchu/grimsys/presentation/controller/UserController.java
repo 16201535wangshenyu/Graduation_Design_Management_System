@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys;
+package cn.edu.nchu.grimsys.presentation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
