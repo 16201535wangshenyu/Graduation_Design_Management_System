@@ -10,5 +10,5 @@
     <delete id="deleteTeacher"></delete>
     <select id="selectTeacherByid" resultType="cn.edu.nchu.grimsys.domain.AbstrTeacher"></select>
 
-    
+
 </mapper>
