@@ -18,7 +18,7 @@ public interface TeacherMapper {
      * @param teacherID
      * @return
      */
-    boolean deleteTeacher(@Param("teacherID")String teacherID );
+    boolean deleteTeacher(@Param("teacherID") String teacherID);
 
     /**
      * 修改教师信息
@@ -32,7 +32,7 @@ public interface TeacherMapper {
      * @param id
      * @return
      */
-    AbstrTeacher selectTeacherById(@Param("id") String id );
+    AbstrTeacher selectTeacherById(@Param("id") String id);
 
 
 }

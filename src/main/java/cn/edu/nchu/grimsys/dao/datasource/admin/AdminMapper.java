@@ -11,7 +11,7 @@ public interface AdminMapper {
      * @param adminNum
      * @return
      */
-   AbstrAdmin selectAdminByid(@Param("adminNum")String adminNum);
+   AbstrAdmin selectAdminByid(@Param("adminNum") String adminNum);
 
     /**
      * 向管理员表增加管理员记录
@@ -19,7 +19,7 @@ public interface AdminMapper {
      * @return
      */
 
-   boolean insertAdmin(@Param("admin")AbstrAdmin admin);
+   boolean insertAdmin(@Param("admin") AbstrAdmin admin);
 
     /**
      * 修改管理员的信息
@@ -27,14 +27,14 @@ public interface AdminMapper {
      * @return
      */
 
-   boolean updateAdmin(@Param("admin")AbstrAdmin admin);
+   boolean updateAdmin(@Param("admin") AbstrAdmin admin);
 
     /**
      * 删除管理员记录通过ID
      * @param adminNum
      * @return
      */
-   boolean deleteAdminById(@Param("adminNum")String adminNum);
+   boolean deleteAdminById(@Param("adminNum") String adminNum);
 
 
 }
