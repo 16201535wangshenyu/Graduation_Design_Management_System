@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Defense_group;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrDefenseGroup;
 import org.apache.ibatis.annotations.Mapper;

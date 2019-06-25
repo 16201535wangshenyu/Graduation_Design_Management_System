@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Subject;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrSubject;
 import org.apache.ibatis.annotations.Mapper;

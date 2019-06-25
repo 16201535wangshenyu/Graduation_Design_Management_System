@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Admin_stu_oper;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdminStuOper;
 import cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper;
