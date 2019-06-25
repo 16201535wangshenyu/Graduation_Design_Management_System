@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Stu_task_submit;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import org.apache.ibatis.annotations.Mapper;
 

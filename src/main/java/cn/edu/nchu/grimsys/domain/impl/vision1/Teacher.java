@@ -1,11 +1,15 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrTeacher;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Component;
+
+import javax.validation.constraints.Pattern;
 
 @Component
 public class Teacher extends AbstrTeacher {
-
+    @Pattern(regexp="[0-9]{8}",message="* 请输入8位数字")
+    protected  String id;/**用户编号**/
     @Override
     public String getId() {
         return id;
@@ -15,6 +19,13 @@ public class Teacher extends AbstrTeacher {
     public void setId(String id) {
         this.id=id;
 
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

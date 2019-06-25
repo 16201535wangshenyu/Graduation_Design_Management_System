@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.admin;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdmin;
 import org.apache.ibatis.annotations.Mapper;

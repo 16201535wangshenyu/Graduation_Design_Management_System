@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Admin_stu_oper;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

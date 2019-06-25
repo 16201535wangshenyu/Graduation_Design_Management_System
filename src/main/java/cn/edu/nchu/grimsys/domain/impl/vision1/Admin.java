@@ -1,8 +1,14 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdmin;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.Pattern;
 
 public class Admin extends AbstrAdmin {
+    @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
+    protected  String id;/**用户编号**/
     @Override
     public String getId() {
         return id;
@@ -24,6 +30,7 @@ public class Admin extends AbstrAdmin {
         this.name=name;
     }
 
+
     @Override
     public String getGender() {
         return gender;
@@ -44,6 +51,13 @@ public class Admin extends AbstrAdmin {
     public void setBirthday(String birthday) {
         this.Birthday=birthday;
 
+    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Stu_tea_both_choice;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import org.apache.ibatis.annotations.Mapper;
 

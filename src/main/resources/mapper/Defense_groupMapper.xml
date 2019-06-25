@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Defense_group.Defense_groupMapper">
+<mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Defense_groupMapper">
 
 
     <!--添加一个答辩小组-->

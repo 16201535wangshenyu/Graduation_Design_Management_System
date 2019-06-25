@@ -1,0 +1,2 @@
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`gradu_design_sys`
+  /*!40100 DEFAULT CHARACTER SET utf8 */;

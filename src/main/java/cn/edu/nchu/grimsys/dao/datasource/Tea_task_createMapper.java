@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Tea_task_create;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import org.apache.ibatis.annotations.Mapper;
 
