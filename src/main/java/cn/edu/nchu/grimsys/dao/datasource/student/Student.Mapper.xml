@@ -5,5 +5,8 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.student.StudentMapper">
 
 
-
+    <insert id="insertStudent"></insert>
+    <update id="updateStudent"></update>
+    <delete id="deleteStudent"></delete>
+    <select id="selectStudentById" resultType="java.lang.Boolean"></select>
 </mapper>

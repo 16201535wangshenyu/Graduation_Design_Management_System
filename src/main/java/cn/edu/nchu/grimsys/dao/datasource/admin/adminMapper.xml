@@ -5,5 +5,21 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.admin.AdminMapper">
 
 
+    <insert id="insertAdmin">
+        insert into admin
+        values (#{},#{},#{},#{},#{})
+
+    </insert>
+
+    <update id="updateAdmin">
+
+    </update>
+
+    <delete id="deleteAdminByid">
+
+    </delete>
+
+
+    <select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.AbstrAdmin"></select>
 
 </mapper>

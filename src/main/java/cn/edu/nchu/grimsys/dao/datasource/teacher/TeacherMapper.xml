@@ -5,5 +5,8 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.teacher.TeacherMapper">
 
 
-
+    <insert id="insertTeacher"></insert>
+    <update id="updateTeacher"></update>
+    <delete id="deleteTeacher"></delete>
+    <select id="selectTeacherByid" resultType="cn.edu.nchu.grimsys.domain.AbstrTeacher"></select>
 </mapper>
