@@ -8,7 +8,7 @@
     <!-- 添加教师-->
     <insert id="insertTeacher">
         insert into teacher(id,name,gender,Birthday,Faculties,Profession,employ_time,ofession_title,Telephone,IDcard_type,IDcard_number)
-        values (#{teacher.getId()},#{teacher.getName()},#{teacher.getGender()},#{teacher.getBirthday()},
+        values (#{id},#{teacher.name},#{teacher.gender},#{teacher.Birthday},
                 #{teacher.getTelephone()},#{teacher.getIDcard_type()},#{teacher.getIDcard_number()},
                 #{teacher.getFaculties()},#{teacher.getEmploy_time()},
                 #{teacher.getProfession_title()},#{teacher.getProfession()})

@@ -5,5 +5,35 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Group_tea_form.Group_tea_formMapper">
 
 
+    <!--添加一条答辩小组-教师记录-->
+    <insert id="addGroupTeaForm">
+        insert into group_tea_form(group_id,tno)
+        values (#{group_id},#{tno})
+    </insert>
 
+    <!--修改答辩小组-教师之间的关系-->
+    <update id="updateGroupTeaForm">
+        update group_tea_form set
+        group_id = #{group_id}
+        where tno = #{tno}
+    </update>
+
+    <!--删除答辩小组中的一位教师-->
+    <delete id="deleteOneTeaInGroup">
+        delete from group_tea_form
+        where tno = #{tno}
+    </delete>
+
+
+    <!--根据答辩小组编号查询答辩小组中所有的教师-->
+    <select id="selectGroupTeaFormByGId" resultType="cn.edu.nchu.grimsys.domain.AbstrGroupTeaForm">
+        select * from group_tea_form
+        where group_id = #{group_id}
+    </select>
+
+    <!--根据教师工号查询该教师所在的答辩小组-->
+    <select id="selectGroupTeaFormByTno" resultType="cn.edu.nchu.grimsys.domain.AbstrGroupTeaForm">
+        select * from group_tea_form
+        where tno = #{tno}
+    </select>
 </mapper>

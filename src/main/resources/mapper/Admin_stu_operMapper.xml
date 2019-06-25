@@ -6,4 +6,34 @@
 
 
 
+
+    <!--添加一条管理员对学生的操作日志-->
+    <insert id="addAdminStuOper">
+        insert into admin_stu_oper(ano,tno,operate_time,operate_type)
+        values (#{ano},#{tno},#{operate_time},#{operate_type})
+    </insert>
+
+
+    <!--根据教师工号，管理员删除日志文件-->
+    <delete id="deleteAdminStuOper">
+        delete from admin_stu_oper
+        where ano = #{ano}
+          and sno = #{sno}
+    </delete>
+
+
+
+    <!--查询指定管理员对所有学生的日志操作记录-->
+    <select id="selectAdminStuOperByAno" resultType="cn.edu.nchu.grimsys.domain.AbstrAdminStuOper">
+        select * from admin_stu_oper
+        where ano = #{ano}
+    </select>
+
+
+    <!--查询指定管理员对指定学生学号的学生的日志操作记录-->
+    <select id="selectAdminStuOperByGId" resultType="cn.edu.nchu.grimsys.domain.AbstrAdminStuOper">
+        select * from admin_stu_oper
+        where ano = #{ano}
+          and sno = #{sno}
+    </select>
 </mapper>

@@ -5,5 +5,44 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Stu_task_submit.Stu_task_submitMapper">
 
 
+    <!--添加一条学生-任务提交关系-->
+    <insert id="addStuTaskSubmit" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit">
+          insert into stu_task_submit(sno,task_no,status,content,grade,remark,submit_time,is_submit,is_scored)
+          values (#{stuTaskSubmit.sno},#{stuTaskSubmit.task_no},#{stuTaskSubmit.status},
+                  #{stuTaskSubmit.content},#{stuTaskSubmit.grade},#{stuTaskSubmit.remark},
+                  #{stuTaskSubmit.submit_time},#{stuTaskSubmit.is_submit},#{stuTaskSubmit.is_scored})
+    </insert>
 
+
+
+    <!--修改一条学生-任务提交关系-->
+    <update id="updateStuTaskSubmit" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit">
+          update stu_task_submit set
+          status = #{stuTaskSubmit.status},
+          content = #{stuTaskSubmit.content},
+          grade = #{stuTaskSubmit.grade},
+          remark = #{stuTaskSubmit.remark},
+          submit_time = #{stuTaskSubmit.submit_time},
+          is_submit = #{stuTaskSubmit.is_submit},
+          is_scored = #{stuTaskSubmit.is_scored}
+          where sno = #{stuTaskSubmit.sno}
+          and task_no = #{stuTaskSubmit.task_no}
+    </update>
+
+
+    <!--删除一条学生-任务提交关系-->
+    <delete id="deleteStuTaskSubmit">
+          delete from stu_task_submit
+          where sno = #{sno}
+          and task_no = #{task_no}
+    </delete>
+
+
+
+    <!--查询一条学生-任务提交关系-->
+    <select id="selectStuTaskSubmit" resultType="cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit">
+          select * from stu_task_submit
+          where sno = #{sno}
+          and task_no = #{task_no}
+    </select>
 </mapper>
