@@ -4,6 +4,48 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Subject.SubjectMapper">
 
+    <!--添加课题-->
+    <insert id="addSubject" parameterType="cn.edu.nchu.grimsys.domain.AbstrSubject">
+      insert into subject(id,name,profession,degree,content,file_name,status,advice)
+      values(#{subject.getId()},#{subject.getName()},#{subject.getProfession()},
+             #{subject.getDegree()},#{subject.getContent()},#{subject.getFile_name()},
+             #{subject.getStatus()},#{subject.getAdvice()})
+    </insert>
+
+
+    <!--修改课题-->
+    <update id="updateSubject">
+        update subject
+        <set>
+            <if test="subject != null">
+                name = #{name},
+                Profession = #{Profession},
+                degree = #{degree},
+                content = #{content},
+                file_number = #{file_number},
+                status = #{status},
+                advice = #{advice},
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+
+    <!--根据课题ID删除课题-->
+    <delete id="deleteSubject">
+      delete from subject
+        where id = #{id}
+    </delete>
+
+
+    <!--根据课题ID查询课题-->
+    <select id="loadSubjectBySubject" resultType="cn.edu.nchu.grimsys.domain.AbstrSubject">
+        select *
+        from subject
+        where id = #{id}
+    </select>
 
 
 </mapper>

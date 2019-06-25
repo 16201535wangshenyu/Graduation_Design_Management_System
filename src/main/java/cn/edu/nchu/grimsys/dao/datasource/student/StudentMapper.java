@@ -15,10 +15,10 @@ public interface StudentMapper {
 
     /**
      * 删除学生根据学生ID
-     * @param studentID
+     * @param id
      * @return
      */
-    boolean deleteStudent(@Param("studentID")String studentID);
+    boolean deleteStudent(@Param("id")String id);
 
     /**
      * 修改学生信息
@@ -29,10 +29,10 @@ public interface StudentMapper {
 
     /**
      * 查询学生通过学生ID
-     * @param studentID
+     * @param id
      * @return
      */
-    boolean selectStudentById(@Param("studentID")String studentID);
+    boolean selectStudentById(@Param("id") String id);
 
 
 

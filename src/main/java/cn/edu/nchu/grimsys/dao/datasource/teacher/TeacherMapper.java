@@ -29,10 +29,10 @@ public interface TeacherMapper {
 
     /**
      * 查询教师信息，通过教师ID
-     * @param teacherID
+     * @param id
      * @return
      */
-    AbstrTeacher selectTeacherByid(@Param("teacherID")String teacherID );
+    AbstrTeacher selectTeacherById(@Param("id") String id );
 
 
 }

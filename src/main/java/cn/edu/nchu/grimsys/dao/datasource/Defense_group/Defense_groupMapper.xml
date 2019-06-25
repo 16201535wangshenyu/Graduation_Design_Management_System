@@ -5,5 +5,35 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Defense_group.Defense_groupMapper">
 
 
+    <!--添加一个答辩小组-->
+    <insert id="addDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
+        insert into defense_group(id,leader_id,group_name,people_num,build_time)
+        values(#{id},#{leader_id},#{group_name},#{people_num},#{build_time})
+    </insert>
 
+
+    <!--修改答辩小组-->
+    <update id="updateDefenseGroup">
+        update defense_group set
+        id = #{abstrDefenseGroup.id},
+        leader_id = #{abstrDefenseGroup.leader_id},
+        group_name = #{abstrDefenseGroup.group_name},
+        people_num = #{abstrDefenseGroup.people_num},
+        build_time = #{abstrDefenseGroup.build_time}
+        where id = #{abstrDefenseGroup.id}
+    </update>
+
+
+    <!--根据ID删除答辩小组-->
+    <delete id="deleteDefenseGroup">
+        delete from defense_group
+        where id = #{id}
+    </delete>
+
+
+    <!--根据ID查询答辩小组-->
+    <select id="loadDefenseGroupByGroupId" resultType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
+        select * from defense_group
+        where id = #{id}
+    </select>
 </mapper>

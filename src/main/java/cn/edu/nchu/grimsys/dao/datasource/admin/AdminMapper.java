@@ -34,7 +34,7 @@ public interface AdminMapper {
      * @param adminNum
      * @return
      */
-   boolean deleteAdminByid(@Param("adminNum")String adminNum);
+   boolean deleteAdminById(@Param("adminNum")String adminNum);
 
 
 }

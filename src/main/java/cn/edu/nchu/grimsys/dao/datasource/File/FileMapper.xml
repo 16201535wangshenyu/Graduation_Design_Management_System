@@ -6,4 +6,43 @@
 
 
 
+
+
+
+
+    <!-- 添加一个文件-->
+    <insert id="addFileRecord" parameterType="cn.edu.nchu.grimsys.domain.AbstrGrade">
+        insert into file(file_num,file_name,path,file_type,task_no,own_per_no)
+        values(#{file.file_num},#{file.file_name},#{file.path},
+               #{file.file_type},#{file.task_no},#{file.own_per_no})
+    </insert>
+
+
+
+    <!-- 修改文件实体 -->
+    <update id="updateFileRecord">
+        update file set
+        file_num = #{file.file_num},
+        file_name = #{file.file_name},
+        path = #{file.path},
+        file_type = #{file.file_type},
+        task_no = #{file.task_no},
+        own_per_no = #{file.own_per_no}
+        where file_num = #{file.file_num}
+    </update>
+
+
+    <!-- 删除文件实体 -->
+    <delete id="deleteFileRecord">
+        delete from file
+        where file_num = #{file_num}
+    </delete>
+
+
+    <!-- 查询文件实体 -->
+    <select id="loadFileByFileId" resultType="cn.edu.nchu.grimsys.domain.AbstrFile">
+        select *
+        from file
+        where file_num = #{file_num}
+    </select>
 </mapper>

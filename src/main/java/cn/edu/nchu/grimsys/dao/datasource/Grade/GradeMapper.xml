@@ -5,5 +5,33 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Grade.GradeMapper">
 
 
+    <!-- 添加一条成绩实体-->
+    <insert id="addGradeRecord" parameterType="cn.edu.nchu.grimsys.domain.AbstrGrade">
+        insert into grade(id,sno,final_grade,grade_level)
+        values(#{grade.id},#{grade.sno},#{grade.final_grade},#{grade.grade_level})
+    </insert>
 
+
+    <!-- 修改成绩实体 -->
+    <update id="updateGradeRecord">
+        update grade set
+        final_grade = #{grade.final_grade},
+        grade_level = #{grade.grade_level}
+        where id = #{grade.id}
+    </update>
+
+
+    <!-- 删除成绩实体 -->
+    <delete id="deleteGradeRecord">
+        delete from grade
+        where id = #{id}
+    </delete>
+
+
+    <!-- 查询成绩实体 -->
+    <select id="loadGradeByGradeId" resultType="cn.edu.nchu.grimsys.domain.AbstrGrade">
+        select *
+        from grade
+        where id = #{id}
+    </select>
 </mapper>
