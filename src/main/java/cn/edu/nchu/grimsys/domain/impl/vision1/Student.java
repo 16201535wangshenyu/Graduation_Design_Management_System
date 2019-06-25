@@ -1,8 +1,9 @@
-package cn.edu.nchu.grimsys.domain.impl1;
+package cn.edu.nchu.grimsys.domain.impl.vision1;
 
-import cn.edu.nchu.grimsys.domain.AbstrAdmin;
+import cn.edu.nchu.grimsys.domain.AbstrStudent;
 
-public class Admin extends AbstrAdmin {
+public class Student extends AbstrStudent {
+
     @Override
     public String getId() {
         return id;
@@ -78,7 +79,6 @@ public class Admin extends AbstrAdmin {
         this.IDcard_number=IDcard_number;
 
     }
-
     public String getFaculties() {
         return Faculties;
     }
@@ -86,18 +86,19 @@ public class Admin extends AbstrAdmin {
     public void setFaculties(String faculties) {
         Faculties = faculties;
     }
-    public String getEmploy_time() {
-        return employ_time;
+    public String getProfession() {
+        return Profession;
     }
 
-    public void setEmploy_time(String employ_time) {
-        this.employ_time = employ_time;
-    }
-    public String getProfession_title() {
-        return Profession_title;
+    public void setProfession(String profession) {
+        Profession = profession;
     }
 
-    public void setProfession_title(String profession_title) {
-        Profession_title = profession_title;
+    public String getSclass() {
+        return Sclass;
+    }
+
+    public void setSclass(String sclass) {
+        Sclass = sclass;
     }
 }
