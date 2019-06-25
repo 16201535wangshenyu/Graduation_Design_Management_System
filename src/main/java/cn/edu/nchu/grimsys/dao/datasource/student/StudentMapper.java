@@ -11,28 +11,28 @@ public interface StudentMapper {
      * @param student
      * @return
      */
-    boolean insertStudent(@Param("student")AbstrStudent student);
+    boolean insertStudent(@Param("student") AbstrStudent student);
 
     /**
      * 删除学生根据学生ID
-     * @param studentID
+     * @param id
      * @return
      */
-    boolean deleteStudent(@Param("studentID")String studentID);
+    boolean deleteStudent(@Param("id") String id);
 
     /**
      * 修改学生信息
      * @param student
      * @return
      */
-    boolean updateStudent(@Param("student")AbstrStudent student);
+    boolean updateStudent(@Param("student") AbstrStudent student);
 
     /**
      * 查询学生通过学生ID
-     * @param studentID
+     * @param id
      * @return
      */
-    boolean selectStudentById(@Param("studentID")String studentID);
+    boolean selectStudentById(@Param("id") String id);
 
 
 
