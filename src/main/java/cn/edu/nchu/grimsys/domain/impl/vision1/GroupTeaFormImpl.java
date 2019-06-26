@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrGroupTeaForm;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GroupTeaFormImpl extends AbstrGroupTeaForm {
     @Override
     public String getGroup_id() {

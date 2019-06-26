@@ -2,9 +2,10 @@ package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrStudent;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Pattern;
-
+@Component
 public class Student extends AbstrStudent {
     @Pattern(regexp="[0-9]{8}",message="* 请输入8位数字")
     protected  String id;/**用户编号**/

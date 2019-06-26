@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrTeaTaskCreate;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TeaTaskCreateImpl extends AbstrTeaTaskCreate {
     @Override
     public String getTno() {
