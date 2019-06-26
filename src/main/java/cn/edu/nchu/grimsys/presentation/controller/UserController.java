@@ -21,6 +21,7 @@ public class UserController implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
        /* registry.addViewController("/admin-info-update").setViewName("/admin/admin-info-update");
 
+
         registry.addViewController("/admin-info-view").setViewName("/admin/admin-info-view");
         registry.addViewController("/admin-search-notice").setViewName("/admin/admin-search-notice");
         registry.addViewController("/admin-search-student").setViewName("/admin/admin-search-student");
