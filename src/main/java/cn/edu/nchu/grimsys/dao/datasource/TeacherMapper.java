@@ -15,10 +15,10 @@ public interface TeacherMapper {
 
     /**
      * 删除教师信息
-     * @param teacherID
+     * @param id
      * @return
      */
-    boolean deleteTeacher(@Param("teacherID") String teacherID);
+    boolean deleteTeacher(@Param("id") String id);
 
     /**
      * 修改教师信息

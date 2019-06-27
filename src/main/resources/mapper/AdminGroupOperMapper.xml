@@ -5,9 +5,10 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.AdminGroupOperMapper">
 
     <!--添加一条管理员对答辩小组的操作日志-->
-    <insert id="addAdminGroupOper">
+    <insert id="addAdminGroupOper" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdminGroupOper">
         insert into admin_group_oper(ano,group_no,operate_time,operate_type)
-        values (#{ano},#{group_no},#{operate_time},#{operate_type})
+        values (#{adminGroupOper.ano},#{adminGroupOper.group_no},
+                #{adminGroupOper.operate_time},#{adminGroupOper.operate_type})
     </insert>
 
 

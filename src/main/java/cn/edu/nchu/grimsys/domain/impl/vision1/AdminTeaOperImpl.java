@@ -1,6 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper;
+import org.springframework.stereotype.Component;
+
+@Component
 
 public class AdminTeaOperImpl extends AbstrAdminTeaOper {
 

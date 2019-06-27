@@ -1,11 +1,13 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdminStuOper;
+import org.springframework.stereotype.Component;
 
 
 /**
  *
  */
+@Component
 public class AdminStuOperImpl extends AbstrAdminStuOper {
 
     @Override

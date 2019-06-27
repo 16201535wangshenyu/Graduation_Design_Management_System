@@ -1,4 +1,4 @@
-package cn.edu.nchu.grimsys.dao.datasource.Stu_subject_select;
+package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrStuSubjectSelect;
 import org.apache.ibatis.annotations.Mapper;

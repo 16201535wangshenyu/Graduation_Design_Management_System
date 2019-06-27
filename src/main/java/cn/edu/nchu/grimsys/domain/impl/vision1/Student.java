@@ -2,10 +2,14 @@ package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrStudent;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Pattern;
-
+@Component
 public class Student extends AbstrStudent {
+
+
+
     @Pattern(regexp="[0-9]{8}",message="* 请输入8位数字")
     protected  String id;/**用户编号**/
     @Override
@@ -65,7 +69,7 @@ public class Student extends AbstrStudent {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=Telephone;
+        this.Telephone=telephone;
 
     }
 
@@ -78,6 +82,15 @@ public class Student extends AbstrStudent {
     public void setIDcard_type(String IDcard_type) {
         this.IDcard_type=IDcard_type;
 
+    }
+
+    @Override
+    public String getDegree() {
+        return this.degree;
+    }
+    @Override
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
 
     @Override
@@ -104,6 +117,9 @@ public class Student extends AbstrStudent {
     public void setProfession(String profession) {
         Profession = profession;
     }
+
+
+
 
     public String getSclass() {
         return Sclass;

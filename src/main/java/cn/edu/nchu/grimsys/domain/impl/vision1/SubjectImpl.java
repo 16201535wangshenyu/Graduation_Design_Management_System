@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrSubject;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SubjectImpl extends AbstrSubject {
     @Override
     public String getId() {

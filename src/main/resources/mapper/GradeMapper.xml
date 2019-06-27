@@ -24,7 +24,7 @@
     <!-- 删除成绩实体 -->
     <delete id="deleteGradeRecord">
         delete from grade
-        where id = #{id}
+        where sno = #{sno}
     </delete>
 
 

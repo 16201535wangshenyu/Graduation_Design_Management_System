@@ -11,10 +11,10 @@ public interface Group_tea_formMapper {
 
     /**
      * 添加一条答辩小组-教师记录
-     * @param abstrGroupTeaForm
+     * @param groupTeaForm
      * @return
      */
-    boolean addGroupTeaForm(@Param("groupTeaForm") AbstrGroupTeaForm abstrGroupTeaForm);
+    boolean addGroupTeaForm(@Param("groupTeaForm") AbstrGroupTeaForm groupTeaForm);
 
     /**
      * 删除答辩小组中的一位教师
@@ -26,10 +26,10 @@ public interface Group_tea_formMapper {
 
     /**
      * 修改答辩小组-教师之间的关系
-     * @param abstrGroupTeaForm
+     * @param groupTeaForm
      * @return
      */
-    boolean updateGroupTeaForm(@Param("groupTeaForm") AbstrGroupTeaForm abstrGroupTeaForm);
+    boolean updateGroupTeaForm(@Param("groupTeaForm") AbstrGroupTeaForm groupTeaForm);
 
 
     /**

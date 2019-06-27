@@ -3,9 +3,10 @@ package cn.edu.nchu.grimsys.domain.impl.vision1;
 import cn.edu.nchu.grimsys.domain.AbstrAdmin;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Pattern;
-
+@Component
 public class Admin extends AbstrAdmin {
     @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
     protected  String id;/**用户编号**/
@@ -67,8 +68,7 @@ public class Admin extends AbstrAdmin {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=Telephone;
-
+        this.Telephone=telephone;
     }
 
     @Override

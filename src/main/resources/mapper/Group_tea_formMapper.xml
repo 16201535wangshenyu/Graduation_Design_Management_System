@@ -8,14 +8,14 @@
     <!--添加一条答辩小组-教师记录-->
     <insert id="addGroupTeaForm">
         insert into group_tea_form(group_id,tno)
-        values (#{group_id},#{tno})
+        values (#{groupTeaForm.group_id},#{groupTeaForm.tno})
     </insert>
 
     <!--修改答辩小组-教师之间的关系-->
     <update id="updateGroupTeaForm">
         update group_tea_form set
-        group_id = #{group_id}
-        where tno = #{tno}
+        group_id = #{groupTeaForm.group_id}
+        where tno = #{groupTeaForm.tno}
     </update>
 
     <!--删除答辩小组中的一位教师-->

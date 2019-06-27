@@ -8,9 +8,9 @@
 
 
     <!--添加一条管理员对学生的操作日志-->
-    <insert id="addAdminStuOper">
+    <insert id="addAdminStuOper" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdminStuOper">
         insert into admin_stu_oper(ano,tno,operate_time,operate_type)
-        values (#{ano},#{tno},#{operate_time},#{operate_type})
+        values (#{adminStuOper.ano},#{adminStuOper.tno},#{adminStuOper.operate_time},#{adminStuOper.operate_type})
     </insert>
 
 

@@ -26,10 +26,10 @@ public interface GradeMapper {
 
     /**
      * 根据学生学号删除成绩
-     * @param id
+     * @param sno
      * @return
      */
-    boolean deleteGradeRecord(@Param("id") String id);
+    boolean deleteGradeRecord(@Param("sno") String sno);
 
 
     /**

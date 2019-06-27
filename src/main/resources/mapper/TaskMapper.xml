@@ -6,7 +6,7 @@
 
 
     <!--增减任务-->
-    <insert id="addTask">
+    <insert id="addTask" parameterType="cn.edu.nchu.grimsys.domain.AbstrTask">
         insert into task(task_no,task_name,task_content)
         values (#{task.task_no},#{task.task_name},#{task.task_content})
     </insert>
@@ -14,9 +14,9 @@
     <!--修改任务-->
     <update id="updateTaskContent" parameterType="cn.edu.nchu.grimsys.domain.AbstrTask">
         update task set
-        task_name = #{task_name},
-        task_content = #{task_content}
-        where task.task_no = #{task.task_no}
+        task_name = #{task.task_name},
+        task_content = #{task.task_content}
+        where task_no = #{task.task_no}
     </update>
 
     <!--删除任务-->

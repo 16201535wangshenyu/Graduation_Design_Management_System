@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrTeaSubjectDeclare;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TeaSubjectDeclareImpl extends AbstrTeaSubjectDeclare {
     @Override
     public String getTno() {

@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrGrade;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GradeImpl extends AbstrGrade {
     @Override
     public String getId() {

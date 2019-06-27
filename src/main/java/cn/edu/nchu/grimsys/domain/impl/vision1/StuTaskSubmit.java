@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StuTaskSubmit extends AbstrStuTaskSubmit {
     @Override
     public String getSno() {

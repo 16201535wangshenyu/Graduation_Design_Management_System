@@ -6,9 +6,10 @@
 
 
     <!--添加一条管理员对教师的操作日志-->
-    <insert id="addAdminTeaOper">
+    <insert id="addAdminTeaOper" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper">
         insert into admin_tea_oper(ano,tno,operate_time,operate_type)
-        values (#{ano},#{tno},#{operate_time},#{operate_type})
+        values (#{adminTeaOper.ano},#{adminTeaOper.tno},
+                #{adminTeaOper.operate_time},#{adminTeaOper.operate_type})
     </insert>
 
 

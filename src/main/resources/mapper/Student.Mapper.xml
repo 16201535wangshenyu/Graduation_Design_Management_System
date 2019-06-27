@@ -5,7 +5,7 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.StudentMapper">
 
     <!-- 根据学生学号删除学生 -->
-    <insert id="insertStudent">
+    <insert id="insertStudent" parameterType="cn.edu.nchu.grimsys.domain.AbstrStudent">
         insert into student(id,name,gender,Birthday,Faculties,Profession,degree,Sclass,Telephone,IDcard_type,IDcard_number)
         values (#{student.id},#{student.name},#{student.gender},#{student.Birthday},
                 #{student.Faculties},#{student.Profession},#{student.degree},
@@ -18,20 +18,20 @@
         update student
         <set>
             <if test="student!=null">
-                name = #{name},
-                gender = #{gender},
-                Birthday = #{Birthday},
-                Faculties = #{Faculties},
-                Profession = #{Profession},
-                degree = #{degree},
-                Sclass = #{Sclass},
-                Telephone = #{Telephone},
-                IDcard_type = #{IDcard_type},
-                IDcard_number = #{IDcard_number},
+                name = #{student.name},
+                gender = #{student.gender},
+                Birthday = #{student.Birthday},
+                Faculties = #{student.Faculties},
+                Profession = #{student.Profession},
+                degree = #{student.degree},
+                Sclass = #{student.Sclass},
+                Telephone = #{student.Telephone},
+                IDcard_type = #{student.IDcard_type},
+                IDcard_number = #{student.IDcard_number},
             </if>
         </set>
         <where>
-            id = #{id}
+            id = #{student.id}
         </where>
     </update>
 
@@ -48,41 +48,4 @@
         where id = #{id}
     </select>
 
-
-
-    <!-- 修改教师 -->
-    <update id="updateTeacher" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeacher">
-        update teacher
-        <set>
-            <if test="teacher!=null">
-                teacher.name = #{teacher.name},
-                teacher.gender = #{teacher.gender},
-                teacher.Birthday = #{teacher.Birthday},
-                teacher.Faculties = #{teacher.Faculties},
-                teacher.employ_time = #{teacher.employ_time},
-                teacher.Profession_title = #{teacher.Profession_title},
-                teacher.Telephone = #{teacher.Telephone},
-                teacher.IDcard_type = #{teacher.IDcard_type},
-                teacher.IDcard_number = #{teacher.IDcard_number},
-                teacher.Profession = #{teacher.Profession},
-                teacher.Sclass = #{teacher.Sclass}
-            </if>
-        </set>
-        <where>
-            teacher.id = #{teacher.id}
-        </where>
-    </update>
-
-    <!-- 根据教师工号删除教师 -->
-    <delete id="deleteTeacher">
-        delete from teacher
-        where id = #{teacherID}
-    </delete>
-
-
-    <select id="selectTeacherById" parameterType="java.lang.String" resultType="cn.edu.nchu.grimsys.domain.AbstrTeacher">
-        select *
-        from teacher
-        where id = #{id}
-    </select>
 </mapper>
