@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Range;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Pattern;
+
 @Component
 public class Admin extends AbstrAdmin {
     @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
@@ -68,7 +69,8 @@ public class Admin extends AbstrAdmin {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=telephone;
+        this.Telephone=Telephone;
+
     }
 
     @Override
