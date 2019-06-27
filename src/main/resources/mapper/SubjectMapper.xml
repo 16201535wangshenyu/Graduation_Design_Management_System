@@ -6,10 +6,10 @@
 
     <!--添加课题-->
     <insert id="addSubject" parameterType="cn.edu.nchu.grimsys.domain.AbstrSubject">
-      insert into subject(id,name,profession,degree,content,file_name,status,advice)
-      values(#{subject.getId()},#{subject.getName()},#{subject.getProfession()},
-             #{subject.getDegree()},#{subject.getContent()},#{subject.getFile_name()},
-             #{subject.getStatus()},#{subject.getAdvice()})
+      insert into subject(id,name,profession,degree,content,file_number,status,advice)
+      values(#{subject.id},#{subject.name},#{subject.Profession},
+             #{subject.degree},#{subject.content},#{subject.file_number},
+             #{subject.status},#{subject.advice})
     </insert>
 
 
@@ -18,17 +18,17 @@
         update subject
         <set>
             <if test="subject != null">
-                name = #{name},
-                Profession = #{Profession},
-                degree = #{degree},
-                content = #{content},
-                file_number = #{file_number},
-                status = #{status},
-                advice = #{advice},
+                name = #{subject.name},
+                Profession = #{subject.Profession},
+                degree = #{subject.degree},
+                content = #{subject.content},
+                file_number = #{subject.file_number},
+                status = #{subject.status},
+                advice = #{subject.advice},
             </if>
         </set>
         <where>
-            id = #{id}
+            id = #{subject.id}
         </where>
     </update>
 

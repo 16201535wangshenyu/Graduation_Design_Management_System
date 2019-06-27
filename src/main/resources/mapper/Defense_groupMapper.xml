@@ -8,12 +8,14 @@
     <!--添加一个答辩小组-->
     <insert id="addDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
         insert into defense_group(id,leader_id,group_name,people_num,build_time)
-        values(#{id},#{leader_id},#{group_name},#{people_num},#{build_time})
+        values(#{abstrDefenseGroup.id},#{abstrDefenseGroup.leader_id},
+               #{abstrDefenseGroup.group_name},#{abstrDefenseGroup.people_num},
+               #{abstrDefenseGroup.build_time})
     </insert>
 
 
     <!--修改答辩小组-->
-    <update id="updateDefenseGroup">
+    <update id="updateDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
         update defense_group set
         id = #{abstrDefenseGroup.id},
         leader_id = #{abstrDefenseGroup.leader_id},

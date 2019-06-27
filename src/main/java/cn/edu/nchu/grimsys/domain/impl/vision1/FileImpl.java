@@ -4,6 +4,7 @@ import cn.edu.nchu.grimsys.domain.AbstrFile;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class FileImpl extends AbstrFile {
 
 

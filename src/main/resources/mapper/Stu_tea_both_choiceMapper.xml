@@ -8,16 +8,17 @@
     <!--添加一条师生双选记录-->
     <insert id="addStuTeaBothChoice">
         insert into stu_tea_both_choice(sno,tno,is_receive)
-        values (#{sno},#{tno},fasle)
+        values (#{stuTeaBothChoice.sno},#{stuTeaBothChoice.tno},0)
+        <!--0代表的是学生刚选择好老师，就吧is_receive设置为待处理-->
     </insert>
 
 
     <!--修改师生双选记录-->
     <update id="updateStuTeaBothChoice" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice">
         update stu_tea_both_choice set
-        is_receive = #{is_receive}
-        where tno = #{tno}
-        and sno = #{sno}
+        is_receive = #{stuTeaBothChoice.is_receive}
+        where tno = #{stuTeaBothChoice.tno}
+        and sno = #{stuTeaBothChoice.sno}
     </update>
 
 
