@@ -8,6 +8,13 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 public abstract class AbstrUser {
     @Size(min=6, max=6)
     protected  String id;/**用户编号**/

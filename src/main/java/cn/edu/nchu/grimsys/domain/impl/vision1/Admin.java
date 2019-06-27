@@ -7,6 +7,13 @@ import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Pattern;
 
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 @Component
 public class Admin extends AbstrAdmin {
     @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")

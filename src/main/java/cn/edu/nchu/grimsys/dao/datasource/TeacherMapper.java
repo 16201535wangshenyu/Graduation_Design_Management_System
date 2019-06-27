@@ -4,6 +4,13 @@ import cn.edu.nchu.grimsys.domain.AbstrTeacher;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 @Mapper
 public interface TeacherMapper {
     /**

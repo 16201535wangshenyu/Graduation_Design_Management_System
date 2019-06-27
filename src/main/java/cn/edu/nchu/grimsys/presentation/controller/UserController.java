@@ -14,10 +14,17 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 @Controller
 
 public class UserController implements WebMvcConfigurer {
-    @Override
+
     public void addViewControllers(ViewControllerRegistry registry) {
        /* registry.addViewController("/admin-info-update").setViewName("/admin/admin-info-update");
 
