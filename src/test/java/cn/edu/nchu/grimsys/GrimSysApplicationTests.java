@@ -20,6 +20,7 @@ public class GrimSysApplicationTests {
     @Test
     public void contextLoads() {
 
+
         adminMapper.insertAdmin(admin);
 
 
