@@ -4,6 +4,7 @@ import cn.edu.nchu.grimsys.domain.AbstrAdminGroupOper;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class AdminGroupOperImpl extends AbstrAdminGroupOper {
 
     @Override

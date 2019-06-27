@@ -6,7 +6,7 @@
 
 
     <!--学生选题后，添加一条记录到选题表-->
-    <insert id="addStuSubjectSelect">
+    <insert id="addStuSubjectSelect" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuSubjectSelect">
         insert into stu_subject_select(sno,cno,select_time)
         values (#{stuSubjectSelect.sno},#{stuSubjectSelect.cno},#{stuSubjectSelect.select_time})
     </insert>

@@ -4,6 +4,7 @@ import cn.edu.nchu.grimsys.domain.AbstrDefenseGroup;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class DefenseGroupImpl extends AbstrDefenseGroup {
 
 

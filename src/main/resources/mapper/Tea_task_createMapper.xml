@@ -14,7 +14,7 @@
 
 
     <!--修改任务截止时间-->
-    <update id="updateTeaTaskCreate">
+    <update id="updateTeaTaskCreate" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeaTaskCreate">
         update tea_task_create set
         end_time  = #{teaTaskCreate.end_time}
         where  tno = #{teaTaskCreate.tno}

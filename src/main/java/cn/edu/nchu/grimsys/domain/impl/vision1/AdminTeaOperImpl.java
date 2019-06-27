@@ -4,6 +4,7 @@ import cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper;
 import org.springframework.stereotype.Component;
 
 @Component
+
 public class AdminTeaOperImpl extends AbstrAdminTeaOper {
 
     @Override

@@ -2,16 +2,16 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.edu.nchu.grimsys.dao.datasource.teacher.TeacherMapper">
+<mapper namespace="cn.edu.nchu.grimsys.dao.datasource.TeacherMapper">
 
 
     <!-- 添加教师-->
-    <insert id="insertTeacher">
-        insert into teacher(id,name,gender,Birthday,Faculties,Profession,employ_time,ofession_title,Telephone,IDcard_type,IDcard_number)
-        values (#{id},#{teacher.name},#{teacher.gender},#{teacher.Birthday},
-                #{teacher.getTelephone()},#{teacher.getIDcard_type()},#{teacher.getIDcard_number()},
-                #{teacher.getFaculties()},#{teacher.getEmploy_time()},
-                #{teacher.getProfession_title()},#{teacher.getProfession()})
+    <insert id="insertTeacher" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeacher">
+        insert into teacher(id,name,gender,Birthday,Faculties,Profession,employ_time,Pofession_title,Telephone,IDcard_type,IDcard_number)
+        values (#{teacher.id},#{teacher.name},#{teacher.gender},#{teacher.Birthday},
+                #{teacher.Faculties},#{teacher.Profession},#{teacher.employ_time},
+                #{teacher.Pofession_title},#{teacher.Telephone},
+                #{teacher.IDcard_type},#{teacher.IDcard_number})
     </insert>
 
 
@@ -20,28 +20,27 @@
         update teacher
         <set>
             <if test="teacher!=null">
-                teacher.name = #{teacher.name},
-                teacher.gender = #{teacher.gender},
-                teacher.Birthday = #{teacher.Birthday},
-                teacher.Faculties = #{teacher.Faculties},
-                teacher.employ_time = #{teacher.employ_time},
-                teacher.Profession_title = #{teacher.Profession_title},
-                teacher.Telephone = #{teacher.Telephone},
-                teacher.IDcard_type = #{teacher.IDcard_type},
-                teacher.IDcard_number = #{teacher.IDcard_number},
-                teacher.Profession = #{teacher.Profession},
-                teacher.Sclass = #{teacher.Sclass}
+                name = #{teacher.name},
+                gender = #{teacher.gender},
+                Birthday = #{teacher.Birthday},
+                Faculties = #{teacher.Faculties},
+                employ_time = #{teacher.employ_time},
+                Profession_title = #{teacher.Profession_title},
+                Telephone = #{teacher.Telephone},
+                IDcard_type = #{teacher.IDcard_type},
+                IDcard_number = #{teacher.IDcard_number},
+                Profession = #{teacher.Profession},
             </if>
         </set>
         <where>
-            teacher.id = #{teacher.id}
+            teacher.id = #{teacher.teacher.id}
         </where>
     </update>
 
     <!-- 根据教师工号删除教师 -->
-    <delete id="deleteTeacher">
+    <delete id="deleteTeacher" parameterType="java.lang.String">
       delete from teacher
-      where id = #{teacherID}
+      where id = #{id}
     </delete>
 
     <!-- 根据教师工号查询教师 -->
