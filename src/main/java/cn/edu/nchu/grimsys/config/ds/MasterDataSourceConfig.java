@@ -30,7 +30,7 @@ public class MasterDataSourceConfig {
     @Value("${master.datasource.username}")
     private String user;
 
-    @Value("${master.datasource.password}")
+    @Value("19970928beyond..")
     private String password;
 
     @Value("${master.datasource.driverClassName}")

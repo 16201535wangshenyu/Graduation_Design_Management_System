@@ -67,7 +67,7 @@ public class Teacher extends AbstrTeacher {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=Telephone;
+        this.Telephone=telephone;
 
     }
 

@@ -6,6 +6,8 @@
   <link rel="stylesheet" th:href="@{css/style.css}">
   <script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
   <script type="text/javascript" th:src="@{js/jquery.SuperSlide.js}"></script>
+  <script type="text/javascript" th:src="@{js/admin_js/admin_nav_js.js}"></script>
+  <script type="text/javascript" th:src="@{js/admin_js/change_div.js}"></script>
   <script type="text/javascript">
   $(function(){
       $(".sideMenu").slide({
@@ -93,51 +95,85 @@ function menuScroll(num){
         <div class="sideMenu" style="margin:0 auto">
           <a  onclick="onclick(this)"><h3 >个人信息管理</h3></a>
           <ul>
-            <li class="on">查看个人信息</li>
-            <li >修改个人信息</li>
+            <li id="line1" class="nav_each1_line1">查看个人信息</li>
+            <li id="line2" class="nav_each1_line2">修改个人信息</li>
           </ul>
           <h3 onclick="onclick(this)">教师信息管理</h3>
           <ul>
-            <li class="on">查询教师信息</li>
-            <li>添加教师信息</li>
-            <li>删除教师信息</li>
-            <li>修改教师信息</li>
+            <li id="line3" class="nav_each2_line1">查询教师信息</li>
+            <li id="line4" class="nav_each2_line2">添加教师信息</li>
+            <li id="line5" class="nav_each2_line3">删除教师信息</li>
+            <li id="line6" class="nav_each2_line4">修改教师信息</li>
 
           </ul>
           <h3 onclick="onclick(this)">学生信息管理</h3>
           <ul>
-            <li class="on">查询学生信息</li>
-            <li>添加学生信息</li>
-            <li>删除学生信息</li>
-            <li>修改学生信息</li>
-
+            <li id="line7" class="nav_each3_line1">查询学生信息</li>
+            <li id="line8" class="nav_each3_line2">添加学生信息</li>
+            <li id="line9" class="nav_each3_line3">删除学生信息</li>
+            <li id="line10" class="nav_each3_line4">修改学生信息</li>
           </ul>
           <h3 onclick="onclick(this)">公告管理</h3>
           <ul>
-            <li class="on">查询公告信息</li>
-            <li>添加公告信息</li>
-            <li>删除公告信息</li>
-            <li>修改公告信息</li>
-
+            <li id="line11" class="nav_each4_line1">查询公告信息</li>
+            <li id="line12" class="nav_each4_line2">添加公告信息</li>
+            <li id="line13" class="nav_each4_line3">删除公告信息</li>
+            <li id="line14" class="nav_each4_line4">修改公告信息</li>
           </ul>
        </div>
     </div>
+
+
+
+    <!--主要操作界面开始-->
     <div class="main">
-      <iframe style="display: none"
-              name="right" id="rightMain1" src="admin/admin-info-update.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <!--个人信息管理-->
+        <iframe style="display: none"
+              name="right" id="rightMain1" src="/admin-info-view" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+              name="right" id="rightMain2" src="/admin-info-update" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
 
-      <iframe style="display: none"
-              name="right" id="rightMain2" src="admin/admin-info-view.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-      <iframe
-              name="right" id="rightMain3" src="admin/admin-search-teacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
 
-      <iframe style="display: none"
-              name="right" id="rightMain4" src="admin/admin-search-student.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
 
-      <iframe style="display: none"
-              name="right" id="rightMain5" src="admin/admin-search-notice.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <!--教师信息管理-->
+        <iframe style="display: none"
+                name="right" id="rightMain3" src="/admin-search-teacher" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain4" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain5" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain6" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
+        <!--学生信息管理-->
+        <iframe
+              name="right" id="rightMain7" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+        <iframe
+                name="right" id="rightMain8" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+        <iframe style="display: none"
+              name="right" id="rightMain9" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+        <iframe style="display: none"
+              name="right" id="rightMain10" src="/admin-search-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
+
+        <!--公告管理-->
+        <iframe style="display: none"
+                name="right" id="rightMain11" src="/admin-search-notice" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain12" src="/admin-search-notice" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain13" src="/admin-search-notice" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain14" src="/admin-search-notice" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
     </div>
-
+    <!--主要操作界面结束-->
 
 
 
