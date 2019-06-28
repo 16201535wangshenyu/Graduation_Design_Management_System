@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrTask;
+import cn.edu.nchu.grimsys.domain.impl.vision1.TaskImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -39,5 +40,5 @@ public interface TaskMapper {
      * @param task_no
      * @return
      */
-    AbstrTask loadTaskByTaskId(@Param("task_no") String task_no);
+    TaskImpl loadTaskByTaskId(@Param("task_no") String task_no);
 }

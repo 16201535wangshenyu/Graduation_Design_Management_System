@@ -11,7 +11,7 @@
 
 
     <!-- 添加一个文件-->
-    <insert id="addFileRecord" parameterType="cn.edu.nchu.grimsys.domain.AbstrGrade">
+    <insert id="addFileRecord" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.FileImpl">
         insert into file(file_num,file_name,path,file_type,task_no,own_per_no)
         values(#{file.file_num},#{file.file_name},#{file.path},
                #{file.file_type},#{file.task_no},#{file.own_per_no})
@@ -40,7 +40,7 @@
 
 
     <!-- 查询文件实体 -->
-    <select id="loadFileByFileId" resultType="cn.edu.nchu.grimsys.domain.AbstrFile">
+    <select id="loadFileByFileId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.FileImpl">
         select *
         from file
         where file_num = #{file_num}

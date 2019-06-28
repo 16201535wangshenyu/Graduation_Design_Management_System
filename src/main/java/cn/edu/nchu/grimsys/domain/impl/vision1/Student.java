@@ -11,14 +11,14 @@ public class Student extends AbstrStudent {
 
 
     @Pattern(regexp="[0-9]{8}",message="* 请输入8位数字")
-    protected  String id;/**用户编号**/
+    protected  Integer id;/**用户编号**/
     @Override
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     @Override
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id=id;
 
     }

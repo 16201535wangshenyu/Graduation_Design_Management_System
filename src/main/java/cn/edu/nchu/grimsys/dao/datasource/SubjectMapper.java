@@ -1,8 +1,10 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrSubject;
+import cn.edu.nchu.grimsys.domain.impl.vision1.SubjectImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
 
 @Mapper
 public interface SubjectMapper {
@@ -31,5 +33,5 @@ public interface SubjectMapper {
     boolean updateSubject(@Param("subject") AbstrSubject subject);
 
 
-    AbstrSubject loadSubjectBySubject(@Param("id") String id);
+    SubjectImpl loadSubjectBySubject(@Param("id") String id);
 }

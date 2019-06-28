@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrDefenseGroup;
+import cn.edu.nchu.grimsys.domain.impl.vision1.DefenseGroupImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -40,5 +41,5 @@ public interface Defense_groupMapper {
      * @param id
      * @return
      */
-    AbstrDefenseGroup loadDefenseGroupByGroupId(@Param("id") String id);
+    DefenseGroupImpl loadDefenseGroupByGroupId(@Param("id") String id);
 }

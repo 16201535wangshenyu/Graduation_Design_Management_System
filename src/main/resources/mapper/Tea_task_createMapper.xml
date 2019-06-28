@@ -6,7 +6,7 @@
 
 
     <!--添加一条教师-任务关联-->
-    <insert id="addTeaTaskCreate" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeaTaskCreate">
+    <insert id="addTeaTaskCreate" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.TeaTaskCreateImpl">
         insert into tea_task_create(tno,task_no,create_time,start_time,end_time)
         values (#{teaTaskCreate.tno},#{teaTaskCreate.task_no},#{teaTaskCreate.create_time},
                 #{teaTaskCreate.start_time},#{teaTaskCreate.end_time})
@@ -14,7 +14,7 @@
 
 
     <!--修改任务截止时间-->
-    <update id="updateTeaTaskCreate" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeaTaskCreate">
+    <update id="updateTeaTaskCreate" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.TeaTaskCreateImpl">
         update tea_task_create set
         end_time  = #{teaTaskCreate.end_time}
         where  tno = #{teaTaskCreate.tno}
@@ -32,7 +32,7 @@
 
 
     <!--查询一条教师-任务关联-->
-    <select id="selectTeaTaskCreate" resultType="cn.edu.nchu.grimsys.domain.AbstrTeaTaskCreate">
+    <select id="selectTeaTaskCreate" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.TeaTaskCreateImpl">
         select *
         from tea_task_create
         where  tno = #{tno}

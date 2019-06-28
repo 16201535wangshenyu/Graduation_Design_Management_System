@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrGrade;
+import cn.edu.nchu.grimsys.domain.impl.vision1.GradeImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -37,7 +38,7 @@ public interface GradeMapper {
      * @param id
      * @return
      */
-    AbstrGrade loadGradeByGradeId(@Param("id") String id);
+    GradeImpl loadGradeByGradeId(@Param("id") String id);
 
 
 }

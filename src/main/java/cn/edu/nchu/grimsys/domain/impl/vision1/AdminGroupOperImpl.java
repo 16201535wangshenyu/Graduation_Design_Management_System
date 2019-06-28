@@ -3,8 +3,8 @@ package cn.edu.nchu.grimsys.domain.impl.vision1;
 import cn.edu.nchu.grimsys.domain.AbstrAdminGroupOper;
 import org.springframework.stereotype.Component;
 
-@Component
 
+@Component
 public class AdminGroupOperImpl extends AbstrAdminGroupOper {
 
     @Override

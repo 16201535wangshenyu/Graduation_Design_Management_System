@@ -9,8 +9,8 @@
 
     <!--添加一条管理员对学生的操作日志-->
     <insert id="addAdminStuOper" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdminStuOper">
-        insert into admin_stu_oper(ano,tno,operate_time,operate_type)
-        values (#{adminStuOper.ano},#{adminStuOper.tno},#{adminStuOper.operate_time},#{adminStuOper.operate_type})
+        insert into admin_stu_oper(ano,sno,operate_time,operate_type)
+        values (#{adminStuOper.ano},#{adminStuOper.sno},#{adminStuOper.operate_time},#{adminStuOper.operate_type})
     </insert>
 
 
@@ -24,14 +24,14 @@
 
 
     <!--查询指定管理员对所有学生的日志操作记录-->
-    <select id="selectAdminStuOperByAno" resultType="cn.edu.nchu.grimsys.domain.AbstrAdminStuOper">
+    <select id="selectAdminStuOperByAno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.AdminStuOperImpl">
         select * from admin_stu_oper
         where ano = #{ano}
     </select>
 
 
     <!--查询指定管理员对指定学生学号的学生的日志操作记录-->
-    <select id="selectAdminStuOperByGId" resultType="cn.edu.nchu.grimsys.domain.AbstrAdminStuOper">
+    <select id="selectAdminStuOperByGId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.AdminStuOperImpl">
         select * from admin_stu_oper
         where ano = #{ano}
           and sno = #{sno}

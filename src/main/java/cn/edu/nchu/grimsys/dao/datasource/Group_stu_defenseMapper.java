@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrGroupStuDefense;
+import cn.edu.nchu.grimsys.domain.impl.vision1.GroupStuDefenseImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -39,7 +40,7 @@ public interface Group_stu_defenseMapper {
      * @param group_id
      * @return
      */
-    List<AbstrGroupStuDefense> selectGroupStuDefenseByGId(@Param("group_id") String group_id);
+    List<GroupStuDefenseImpl> selectGroupStuDefenseByGId(@Param("group_id") String group_id);
 
 
     /**
@@ -47,5 +48,5 @@ public interface Group_stu_defenseMapper {
      * @param sno
      * @return
      */
-    AbstrGroupStuDefense selectGroupStuDefenseByTno(@Param("sno") String sno);
+    GroupStuDefenseImpl selectGroupStuDefenseByTno(@Param("sno") String sno);
 }

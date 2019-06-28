@@ -10,14 +10,15 @@ import javax.validation.constraints.Pattern;
 @Component
 public class Admin extends AbstrAdmin {
     @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
-    protected  String id;/**用户编号**/
+    public   Integer id;/**用户编号**/
+
     @Override
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
     @Override
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id=id;
 
     }
@@ -69,7 +70,7 @@ public class Admin extends AbstrAdmin {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=Telephone;
+        this.Telephone=telephone;
 
     }
 

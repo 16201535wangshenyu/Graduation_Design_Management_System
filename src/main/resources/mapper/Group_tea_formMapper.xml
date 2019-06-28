@@ -26,13 +26,13 @@
 
 
     <!--根据答辩小组编号查询答辩小组中所有的教师-->
-    <select id="selectGroupTeaFormByGId" resultType="cn.edu.nchu.grimsys.domain.AbstrGroupTeaForm">
+    <select id="selectGroupTeaFormByGId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.GroupTeaFormImpl">
         select * from group_tea_form
         where group_id = #{group_id}
     </select>
 
     <!--根据教师工号查询该教师所在的答辩小组-->
-    <select id="selectGroupTeaFormByTno" resultType="cn.edu.nchu.grimsys.domain.AbstrGroupTeaForm">
+    <select id="selectGroupTeaFormByTno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.GroupTeaFormImpl">
         select * from group_tea_form
         where tno = #{tno}
     </select>

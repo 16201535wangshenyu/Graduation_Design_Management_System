@@ -6,7 +6,7 @@
 
 
     <!--添加一个答辩小组-->
-    <insert id="addDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
+    <insert id="addDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.DefenseGroupImpl">
         insert into defense_group(id,leader_id,group_name,people_num,build_time)
         values(#{abstrDefenseGroup.id},#{abstrDefenseGroup.leader_id},
                #{abstrDefenseGroup.group_name},#{abstrDefenseGroup.people_num},
@@ -15,7 +15,7 @@
 
 
     <!--修改答辩小组-->
-    <update id="updateDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
+    <update id="updateDefenseGroup" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.DefenseGroupImpl">
         update defense_group set
         id = #{abstrDefenseGroup.id},
         leader_id = #{abstrDefenseGroup.leader_id},
@@ -34,7 +34,7 @@
 
 
     <!--根据ID查询答辩小组-->
-    <select id="loadDefenseGroupByGroupId" resultType="cn.edu.nchu.grimsys.domain.AbstrDefenseGroup">
+    <select id="loadDefenseGroupByGroupId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.DefenseGroupImpl">
         select * from defense_group
         where id = #{id}
     </select>

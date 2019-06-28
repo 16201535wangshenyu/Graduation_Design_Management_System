@@ -6,7 +6,7 @@
 
 
     <!-- 添加教师-->
-    <insert id="insertTeacher" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeacher">
+    <insert id="insertTeacher" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.Teacher">
         insert into teacher(id,name,gender,Birthday,Faculties,Profession,employ_time,Pofession_title,Telephone,IDcard_type,IDcard_number)
         values (#{teacher.id},#{teacher.name},#{teacher.gender},#{teacher.Birthday},
                 #{teacher.Faculties},#{teacher.Profession},#{teacher.employ_time},
@@ -16,7 +16,7 @@
 
 
     <!-- 修改教师 -->
-    <update id="updateTeacher" parameterType="cn.edu.nchu.grimsys.domain.AbstrTeacher">
+    <update id="updateTeacher" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.Teacher">
         update teacher
         <set>
             <if test="teacher!=null">
@@ -44,7 +44,7 @@
     </delete>
 
     <!-- 根据教师工号查询教师 -->
-    <select id="selectTeacherById" parameterType="java.lang.String" resultType="cn.edu.nchu.grimsys.domain.AbstrTeacher">
+    <select id="selectTeacherById" parameterType="java.lang.String" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.Teacher">
         select *
         from teacher
         where id = #{id}

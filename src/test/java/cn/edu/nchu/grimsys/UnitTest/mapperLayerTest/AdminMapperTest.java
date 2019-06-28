@@ -21,45 +21,45 @@ public class AdminMapperTest {
 
     @Test
     public void insertAdminTest() {
-        admin.setId("000000");
+        admin.setId(3);
         admin.setPassword(StringHelper.encrypt("123456"));
-        admin.setName("张三");
+        admin.setName("丁兴宇");
         admin.setGender("男");
         admin.setBirthday("1995-11-03 16:44:22");
-        admin.setFaculties("软件");
-        admin.setEmploy_time("2018年5月8日");
+        admin.setFaculties("软件工程");
+        admin.setEmploy_time("2016-9-1");
         admin.setProfession_title("院系管理员");
         admin.setTelephone("18296378888");
-        admin.setIDcard_number("管理员");
-        admin.setIDcard_type("0001");
+        admin.setIDcard_number("身份证");
+        admin.setIDcard_type("111");
 
         adminMapper.insertAdmin(admin);
     }
 
     @Test
     public void selectAdminByidTest(){
-        adminMapper.selectAdminByid("");
+        adminMapper.selectAdminByid(000003);
     }
 
     @Test
     public void updateAdminTest(){
-        admin.setId("000000");
+        admin.setId(3);
         admin.setPassword(StringHelper.encrypt("123456"));
-        admin.setName("张三");
+        admin.setName("丁兴宇");
         admin.setGender("男");
-        admin.setBirthday("1995-11-03 16:44:22");
-        admin.setFaculties("软件");
-        admin.setEmploy_time("2018年5月8日");
+        admin.setBirthday("1997-11-03 16:44:22");
+        admin.setFaculties("软件工程");
+        admin.setEmploy_time("2016-9-1");
         admin.setProfession_title("院系管理员");
         admin.setTelephone("18296378888");
-        admin.setIDcard_number("管理员");
-        admin.setIDcard_type("0001");
+        admin.setIDcard_number("身份证");
+        admin.setIDcard_type("111");
 
         adminMapper.updateAdmin(admin);
     }
 
     @Test
     public void deleteAdminByIdTest(){
-        adminMapper.deleteAdminById("");
+        adminMapper.deleteAdminById(3);
     }
 }

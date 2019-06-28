@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrTeacher;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Teacher;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -32,7 +33,7 @@ public interface TeacherMapper {
      * @param id
      * @return
      */
-    AbstrTeacher selectTeacherById(@Param("id") String id);
+    Teacher selectTeacherById(@Param("id") String id);
 
 
 }

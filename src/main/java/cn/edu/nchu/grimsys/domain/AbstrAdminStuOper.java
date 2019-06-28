@@ -1,6 +1,8 @@
 package cn.edu.nchu.grimsys.domain;
 
 
+import org.springframework.stereotype.Component;
+
 /**
  * 管理员管理学生bean
  */

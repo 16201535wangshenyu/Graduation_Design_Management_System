@@ -5,7 +5,7 @@
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.StudentMapper">
 
     <!-- 根据学生学号删除学生 -->
-    <insert id="insertStudent" parameterType="cn.edu.nchu.grimsys.domain.AbstrStudent">
+    <insert id="insertStudent" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.Student">
         insert into student(id,name,gender,Birthday,Faculties,Profession,degree,Sclass,Telephone,IDcard_type,IDcard_number)
         values (#{student.id},#{student.name},#{student.gender},#{student.Birthday},
                 #{student.Faculties},#{student.Profession},#{student.degree},
@@ -13,8 +13,8 @@
                 #{student.IDcard_number})
     </insert>
 
-    <!-- 根据学生学号删除学生 -->
-    <update id="updateStudent" parameterType="cn.edu.nchu.grimsys.domain.AbstrStudent">
+    <!-- 根据学生学号更新学生 -->
+    <update id="updateStudent" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.Student">
         update student
         <set>
             <if test="student!=null">

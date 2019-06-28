@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice;
+import cn.edu.nchu.grimsys.domain.impl.vision1.StuTeaBothChoice;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -36,7 +37,7 @@ public interface Stu_tea_both_choiceMapper {
      * @param sno
      * @return
      */
-    AbstrStuTeaBothChoice selectStuTeaBothChoiceBySno(@Param("sno") String sno);
+    StuTeaBothChoice selectStuTeaBothChoiceBySno(@Param("sno") String sno);
 
 
     /**
@@ -44,5 +45,5 @@ public interface Stu_tea_both_choiceMapper {
      * @param tno
      * @return
      */
-    AbstrStuTeaBothChoice selectStuTeaBothChoiceByTno(@Param("tno") String tno);
+    StuTeaBothChoice selectStuTeaBothChoiceByTno(@Param("tno") String tno);
 }

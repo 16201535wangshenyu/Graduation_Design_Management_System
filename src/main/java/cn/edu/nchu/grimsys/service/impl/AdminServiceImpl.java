@@ -19,7 +19,7 @@ public class AdminServiceImpl implements AdminService {
      */
     @Override
     public boolean validUser(String username, String password) {
-        AbstrAdmin admin=adminMapper.selectAdminByid("username");
+        AbstrAdmin admin=adminMapper.selectAdminByid(Integer.parseInt(username.trim()));
         if(admin==null)
             return false;
         else

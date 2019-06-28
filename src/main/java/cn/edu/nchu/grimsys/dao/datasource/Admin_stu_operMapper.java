@@ -1,7 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdminStuOper;
-import cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper;
+import cn.edu.nchu.grimsys.domain.impl.vision1.AdminStuOperImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -34,7 +34,7 @@ public interface Admin_stu_operMapper {
      * @param ano
      * @return
      */
-    List<AbstrAdminStuOper> selectAdminStuOperByAno (@Param("ano") String  ano);
+    List<AdminStuOperImpl> selectAdminStuOperByAno (@Param("ano") String  ano);
 
 
     /**
@@ -43,6 +43,6 @@ public interface Admin_stu_operMapper {
      * @param sno
      * @return
      */
-    List<AbstrAdminStuOper> selectAdminStuOperByGId (@Param("ano") String  ano,@Param("sno") String sno);
+    List<AdminStuOperImpl> selectAdminStuOperByGId (@Param("ano") String  ano, @Param("sno") String sno);
 
 }
