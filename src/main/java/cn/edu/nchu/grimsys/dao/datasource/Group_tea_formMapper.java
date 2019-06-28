@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrGroupTeaForm;
+import cn.edu.nchu.grimsys.domain.impl.vision1.GroupTeaFormImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -44,7 +45,7 @@ public interface Group_tea_formMapper {
      * @param group_id
      * @return
      */
-    List<AbstrGroupTeaForm> selectGroupTeaFormByGId(@Param("group_id") String group_id);
+    List<GroupTeaFormImpl> selectGroupTeaFormByGId(@Param("group_id") String group_id);
 
 
     /**
@@ -52,6 +53,6 @@ public interface Group_tea_formMapper {
      * @param tno
      * @return
      */
-    AbstrGroupTeaForm selectGroupTeaFormByTno(@Param("tno") String tno);
+    GroupTeaFormImpl selectGroupTeaFormByTno(@Param("tno") String tno);
 
 }

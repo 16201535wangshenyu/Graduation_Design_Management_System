@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrFile;
+import cn.edu.nchu.grimsys.domain.impl.vision1.FileImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,8 +14,6 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface FileMapper {
-
-
 
     /**
      * 添加文件
@@ -29,7 +28,7 @@ public interface FileMapper {
      * @param file
      * @return
      */
-    boolean updateFileRecord(@Param("grade") AbstrFile file);
+    boolean updateFileRecord(@Param("file") AbstrFile file);
 
 
     /**
@@ -45,5 +44,5 @@ public interface FileMapper {
      * @param file_num
      * @return
      */
-    AbstrFile loadFileByFileId(@Param("file_num") String file_num);
+    FileImpl loadFileByFileId(@Param("file_num") String file_num);
 }

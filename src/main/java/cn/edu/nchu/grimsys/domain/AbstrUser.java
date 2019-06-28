@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
  */
 public abstract class AbstrUser {
     @Size(min=6, max=6)
-    protected  String id;/**用户编号**/
+    protected  Integer id;/**用户编号**/
 
     protected  String name;/**用户姓名**/
 
@@ -48,9 +48,9 @@ public abstract class AbstrUser {
     @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
     protected  String Sclass;/**班级**/
 
-    public abstract String getId() ;
+    public abstract Integer getId() ;
 
-    public abstract void setId(String id) ;
+    public abstract void setId(Integer id) ;
 
     public abstract String getName() ;
 

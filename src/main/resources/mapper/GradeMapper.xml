@@ -13,7 +13,7 @@
         -->
 
     <!-- 添加一条成绩实体-->
-    <insert id="addGradeRecord" parameterType="cn.edu.nchu.grimsys.domain.AbstrGrade">
+    <insert id="addGradeRecord" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.GradeImpl">
         insert into grade(id,sno,final_grade,grade_level)
         values(#{grade.id},#{grade.sno},#{grade.final_grade},#{grade.grade_level})
     </insert>
@@ -36,7 +36,7 @@
 
 
     <!-- 查询成绩实体 -->
-    <select id="loadGradeByGradeId" resultType="cn.edu.nchu.grimsys.domain.AbstrGrade">
+    <select id="loadGradeByGradeId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.GradeImpl">
         select *
         from grade
         where id = #{id}

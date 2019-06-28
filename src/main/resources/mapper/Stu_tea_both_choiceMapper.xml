@@ -21,7 +21,7 @@
 
 
     <!--修改师生双选记录-->
-    <update id="updateStuTeaBothChoice" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice">
+    <update id="updateStuTeaBothChoice" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTeaBothChoice">
         update stu_tea_both_choice set
         is_receive = #{stuTeaBothChoice.is_receive}
         where tno = #{stuTeaBothChoice.tno}
@@ -37,7 +37,7 @@
 
 
     <!--删除师生双选记录-->
-    <delete id="deleteStuTeaBothChoice" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice">
+    <delete id="deleteStuTeaBothChoice" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTeaBothChoice">
         delete from stu_tea_both_choice
         where tno = #{stuTeaBothChoice.tno}
         and sno = #{stuTeaBothChoice.sno}
@@ -46,7 +46,7 @@
 
 
     <!--根据学生学号查询师生双选记录-->
-    <select id="selectStuTeaBothChoiceBySno" resultType="cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice">
+    <select id="selectStuTeaBothChoiceBySno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTeaBothChoice">
         select *
         from stu_tea_both_choice
         where sno = #{sno}
@@ -54,7 +54,7 @@
 
 
     <!--根据教师工号查询师生双选记录-->
-    <select id="selectStuTeaBothChoiceByTno" resultType="cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice">
+    <select id="selectStuTeaBothChoiceByTno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTeaBothChoice">
         select *
         from stu_tea_both_choice
         where tno = #{tno}

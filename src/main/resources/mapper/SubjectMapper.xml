@@ -12,7 +12,7 @@
      主要功能说明：
     -->
     <!--添加课题-->
-    <insert id="addSubject" parameterType="cn.edu.nchu.grimsys.domain.AbstrSubject">
+    <insert id="addSubject" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.SubjectImpl">
       insert into subject(id,name,profession,degree,content,file_number,status,advice)
       values(#{subject.id},#{subject.name},#{subject.Profession},
              #{subject.degree},#{subject.content},#{subject.file_number},
@@ -48,7 +48,7 @@
 
 
     <!--根据课题ID查询课题-->
-    <select id="loadSubjectBySubject" resultType="cn.edu.nchu.grimsys.domain.AbstrSubject">
+    <select id="loadSubjectBySubject" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.SubjectImpl">
         select *
         from subject
         where id = #{id}

@@ -13,7 +13,7 @@
     -->
 
     <!--添加一条学生-任务提交关系-->
-    <insert id="addStuTaskSubmit" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit">
+    <insert id="addStuTaskSubmit" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTaskSubmit">
           insert into stu_task_submit(sno,task_no,status,content,grade,remark,submit_time,is_submit,is_scored)
           values (#{stuTaskSubmit.sno},#{stuTaskSubmit.task_no},#{stuTaskSubmit.status},
                   #{stuTaskSubmit.content},#{stuTaskSubmit.grade},#{stuTaskSubmit.remark},
@@ -23,7 +23,7 @@
 
 
     <!--修改一条学生-任务提交关系-->
-    <update id="updateStuTaskSubmit" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit">
+    <update id="updateStuTaskSubmit" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTaskSubmit">
           update stu_task_submit set
           status = #{stuTaskSubmit.status},
           content = #{stuTaskSubmit.content},
@@ -47,7 +47,7 @@
 
 
     <!--查询一条学生-任务提交关系-->
-    <select id="selectStuTaskSubmit" resultType="cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit">
+    <select id="selectStuTaskSubmit" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.StuTaskSubmit">
           select * from stu_task_submit
           where sno = #{sno}
           and task_no = #{task_no}

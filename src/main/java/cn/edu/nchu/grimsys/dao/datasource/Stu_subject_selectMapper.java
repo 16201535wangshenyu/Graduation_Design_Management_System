@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrStuSubjectSelect;
+import cn.edu.nchu.grimsys.domain.impl.vision1.StuSubjectSelectImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -37,5 +38,5 @@ public interface Stu_subject_selectMapper {
      * @param cno
      * @return
      */
-    AbstrStuSubjectSelect selectStuSubjectSelect(@Param("sno") String sno,@Param("cno") String cno);
+    StuSubjectSelectImpl selectStuSubjectSelect(@Param("sno") String sno, @Param("cno") String cno);
 }

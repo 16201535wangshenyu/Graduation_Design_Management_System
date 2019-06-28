@@ -44,7 +44,13 @@
     </delete>
 
 
-    <select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.AbstrAdmin">
+    <!--<select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.Admin" >
+        select *
+        from admin
+        where id = #{adminNum}
+    </select>-->
+
+    <select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.AbstrAdmin" >
         select *
         from admin
         where id = #{adminNum}

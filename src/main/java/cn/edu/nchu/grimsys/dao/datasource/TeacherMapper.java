@@ -42,7 +42,7 @@ public interface TeacherMapper {
      * @param id
      * @return
      */
-    AbstrTeacher selectTeacherById(@Param("id") String id);
+    Teacher selectTeacherById(@Param("id") String id);
 
 
     List<Teacher> selectAllTeacher();

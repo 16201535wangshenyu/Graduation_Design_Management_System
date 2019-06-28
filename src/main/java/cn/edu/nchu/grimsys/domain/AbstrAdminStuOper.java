@@ -1,6 +1,8 @@
 package cn.edu.nchu.grimsys.domain;
 
 
+import org.springframework.stereotype.Component;
+
 /**
  * 162015班 第11组
  * 毕设信息管理系统--模块
