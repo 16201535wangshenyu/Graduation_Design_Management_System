@@ -4,14 +4,21 @@ import cn.edu.nchu.grimsys.domain.AbstrStudent;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Component
 public class Student extends AbstrStudent {
-
-
-
     @Pattern(regexp="[0-9]{8}",message="* 请输入8位数字")
     protected  String id;/**用户编号**/
+    @NotBlank(message="密码不能为空!")
+    protected  String password;/**用户密码**/
     @Override
     public String getId() {
         return id;

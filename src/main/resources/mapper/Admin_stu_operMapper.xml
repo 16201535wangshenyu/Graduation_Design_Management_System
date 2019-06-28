@@ -4,7 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Admin_stu_operMapper">
 
-
+    <!--
+     162015班 第11组
+     毕设信息管理系统-模块
+     @author ：
+     date：
+     主要功能说明：
+    -->
 
 
     <!--添加一条管理员对学生的操作日志-->

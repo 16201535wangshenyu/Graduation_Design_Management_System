@@ -44,7 +44,7 @@ $(function(){
             $(this).val('输入验证码');
         }
     });
-/*    $(".stu_login_error").Validform({
+   /* $(".stu_login_error").Validform({
         tiptype:function(msg,o,cssctl){
             var objtip=$(".stu_error_box");
             cssctl(objtip,o.type);
@@ -89,7 +89,7 @@ $(function(){
             $(this).val('输入验证码');
         }
     });
-  /*  $(".tea_login_error").Validform({
+   /* $(".tea_login_error").Validform({
         tiptype:function(msg,o,cssctl){
             var objtip=$(".tea_error_box");
             cssctl(objtip,o.type);
@@ -134,7 +134,7 @@ $(function(){
             $(this).val('输入验证码');
         }
     });
-  /*  $(".sec_login_error").Validform({
+    /*$(".sec_login_error").Validform({
         tiptype:function(msg,o,cssctl){
             var objtip=$(".sec_error_box");
             cssctl(objtip,o.type);
@@ -143,6 +143,7 @@ $(function(){
         ajaxPost:true
     });*/
 });
+/*
 $(function(){
     $(".screenbg ul li").each(function(){
         $(this).css("opacity","0");
@@ -170,4 +171,4 @@ $(function(){
     //根据窗口宽度生成图片宽度
     var width = $(window).width();
     $(".screenbg ul img").css("width",width+"px");
-});
+});*/

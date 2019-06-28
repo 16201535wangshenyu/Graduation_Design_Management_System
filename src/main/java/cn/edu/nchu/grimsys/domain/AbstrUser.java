@@ -8,13 +8,19 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 public abstract class AbstrUser {
     @Size(min=6, max=6)
     protected  String id;/**用户编号**/
 
     protected  String name;/**用户姓名**/
 
-    @NotBlank(message="密码不能为空!")
     protected  String password;/**用户密码**/
 
     protected  String gender;/**性别**/

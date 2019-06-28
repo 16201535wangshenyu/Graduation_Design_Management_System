@@ -18,10 +18,9 @@ public class InsertTest {
     @Autowired
     private AbstrStudent student;
 
-
     @Test
     public void insertStudentTest(){
-        student.setId("000003");
+        student.setId("000004");
         student.setName("何文勇");
         student.setGender("男");
         student.setBirthday("1997-01-17");

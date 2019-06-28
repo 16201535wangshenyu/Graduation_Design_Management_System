@@ -4,6 +4,13 @@ import cn.edu.nchu.grimsys.domain.AbstrStuTeaBothChoice;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Mapper
 public interface Stu_tea_both_choiceMapper {
 
@@ -45,4 +52,6 @@ public interface Stu_tea_both_choiceMapper {
      * @return
      */
     AbstrStuTeaBothChoice selectStuTeaBothChoiceByTno(@Param("tno") String tno);
+
+    boolean updateIsRecieve(@Param("studentId") String studentId,@Param("id")  String id);
 }

@@ -1,16 +1,24 @@
 package cn.edu.nchu.grimsys.domain.impl.vision1;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdmin;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Component
 public class Admin extends AbstrAdmin {
     @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
     protected  String id;/**用户编号**/
+
+    protected  String password;/**用户密码**/
     @Override
     public String getId() {
         return id;
@@ -69,7 +77,7 @@ public class Admin extends AbstrAdmin {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=Telephone;
+        this.Telephone=telephone;
 
     }
 
