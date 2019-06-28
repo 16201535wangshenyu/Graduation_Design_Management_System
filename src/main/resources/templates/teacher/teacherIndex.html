@@ -13,6 +13,10 @@
     <link rel="stylesheet" th:href="@{css/common.css}">
     <link rel="stylesheet" th:href="@{css/style.css}">
     <script type="text/javascript" th:src="@{js/jquery.SuperSlide.js}"></script>
+
+
+    <script type="text/javascript" th:src="@{js/teacher_js/teacher_nav_js.js}"></script>
+    <script type="text/javascript" th:src="@{js/admin_js/change_div.js}"></script>
   <script type="text/javascript">
   $(function(){
       $(".sideMenu").slide({
@@ -100,61 +104,109 @@ function menuScroll(num){
         <div class="sideMenu" style="margin:0 auto">
           <h3>个人信息管理</h3>
           <ul>
-           <li class="menu-1 on">查看个人信息</li>
-            <li>修改个人信息</li>
+           <li id="line1" class="nav_each1_line1">查看个人信息</li>
+           <li id="line2" class="nav_each1_line2">修改个人信息</li>
           </ul>
+
+
+
           <h3> 课题管理</h3>
           <ul>
-            <li class="on">创建课题</li>
-            <li>修改课题</li>
-            <li>删除课题</li>
-            <li>查看课题</li>
-            <li>提交课题</li>
-            <li>发布课题</li>
+            <li id="line3" class="nav_each2_line1">创建课题</li>
+            <li id="line4" class="nav_each2_line2">修改课题</li>
+            <li id="line5" class="nav_each2_line3">查看课题</li>
+            <li id="line6" class="nav_each2_line4">提交课题</li>
+            <li id="line7" class="nav_each2_line5">发布课题</li>
           </ul>
+
+
           <h3> 教师任务管理</h3>
           <ul>
-            <li class="on">添加任务</li>
-            <li>删除任务</li>
-            <li>修改任务</li>
-            <li>查询任务</li>
-            <li>批改任务</li>
+            <li id="line8" class="nav_each3_line1">添加任务</li>
+            <li id="line9" class="nav_each3_line2">删除任务</li>
+            <li id="line10" class="nav_each3_line3">修改任务</li>
+            <li id="line11" class="nav_each3_line4">查询任务</li>
           </ul>
+
+
           <h3>查看公告</h3>
          	<ul>
-            <li>查看公告</li>
+            <li id="line12" class="nav_each4_line1">查看公告</li>
           </ul>
           <h3> 选择愿带学生</h3>
           <ul>
-            <li>选择愿带学生</li>
+            <li id="line13" class="nav_each5_line1">选择愿带学生</li>
           </ul>
           
           <h3> 答辩过程管理</h3>
           <ul>
-             <li class="on">添加答辩过程</li>
-            <li>删除答辩过程</li>
-            <li>修改答辩过程</li>
-            <li>查询答辩过程</li>
+            <li id="line14" class="nav_each6_line1">添加答辩过程</li>
+            <li id="line15" class="nav_each6_line2">删除答辩过程</li>
+            <li id="line16" class="nav_each6_line3">修改答辩过程</li>
+            <li id="line17" class="nav_each6_line4">查询答辩过程</li>
           </ul>
         
 
        </div>
     </div>
+    <!--主要操作界面开始-->
     <div class="main">
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-       
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-       
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-       
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-       
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-       
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
-       
-       <iframe style="display: none" name="right" id="rightMain" src="Student/ChooseTeacher.html" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <!--个人信息管理-->
+        <iframe style="display: none"
+                name="right" id="rightMain1" src="/teacher-info-view" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain2" src="/teacher-info-update" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
+        <!--课题管理-->
+        <iframe style="display: none"
+                name="right" id="rightMain3" src="/teacher-create-subject" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain4" src="/teacher-update-subject" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain5" src="/teacher-loadall-subject" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain7" src="/teacher-submit-subject" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain6" src="/teacher-publish-subject" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
+        <!--教师任务管理-->
+        <iframe style="display: none"
+                name="right" id="rightMain8" src="/teacher-add-task" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain9" src="/teacher-delete-task" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe
+                name="right" id="rightMain10" src="/teacher-update-task" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain11" src="/teacher-loadall-task" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
+
+        <!--查看公告-->
+        <iframe
+                name="right" id="rightMain13" src="/teacher-load-pronnouncment" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+        <!--选择愿带学生-->
+        <iframe
+                name="right" id="rightMain12" src="/teacher-choose-student" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
+
+        <!--答辩过程管理-->
+        <iframe
+                name="right" id="rightMain14" src="/teacher-add-defense" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain15" src="/teacher-delete-defense" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe
+                name="right" id="rightMain16" src="/teacher-update-defense" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+        <iframe style="display: none"
+                name="right" id="rightMain17" src="/teacher-loadall-defense" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+
     </div>
+    <!--主要操作界面结束-->
+
+
+
     <div class="bottom">
       <div id="bottom_bg">版权</div>
     </div>
