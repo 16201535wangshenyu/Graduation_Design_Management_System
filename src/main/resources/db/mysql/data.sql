@@ -318,6 +318,7 @@ CREATE TABLE `teacher` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 create view adminView
 AS
 select * from admin;
