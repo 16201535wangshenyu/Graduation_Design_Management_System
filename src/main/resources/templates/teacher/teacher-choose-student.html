@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>教师选择愿带学生</title>
+
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="margin: 0 auto;width: 80%;height: 800px;">
+
+
+    <!--主要工作区-->
+    <div class="container" style="float: left;width: 80%;margin-left: 2%;">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>学生姓名</th>
+                        <th>专业</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="success">
+                        <td  name="id">16201512</td>
+                        <td  name="id">何文勇</td>
+                        <td name="id">软件工程</td>
+                        <td  style="width: 200px;">
+                            <button class="btn btn-success" ><a onclick="return confirm('确定要接受么')" href="updateProductCategory.jsp?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">拒绝</a></button>
+                            <button class="btn btn-warning" style="margin-left: 20px;"><a onclick="return confirm('确定要接受么')" href="#?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">接受</a></button>
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td  name="id">16201535</td>
+                        <td  name="id">王慎瑜</td>
+                        <td name="id">软件工程</td>
+                        <td  style="width: 200px;">
+                            <button class="btn btn-success" ><a onclick="return confirm('确定要拒绝么')" href="updateProductCategory.jsp?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">拒绝</a></button>
+                            <button class="btn btn-warning" style="margin-left: 20px;"><a onclick="return confirm('确定要接受么')" href="#?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">接受</a></button>
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td  name="id">16201508</td>
+                        <td  name="id">丁兴宇</td>
+                        <td name="id">软件工程</td>
+                        <td  style="width: 200px;">
+                            <button class="btn btn-success" ><a onclick="return confirm('确定要拒绝么')" href="updateProductCategory.jsp?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">拒绝</a></button>
+                            <button class="btn btn-warning" style="margin-left: 20px;"><a onclick="return confirm('确定要接受么')" href="#?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">接受</a></button>
+                        </td>
+                    </tr>
+
+                    <tr class="success" th:each="student,studentStat : ${studentList}">
+                        <td th:if="${student.id!=null}" th:text="${student.id}" name="id">16201512</td>
+                        <td th:if="${student.name!=null}" th:text="${student.name}" name="id">何文勇</td>
+                        <td  th:if="${student.Profession!=null}" th:text="${student.Profession}" name="id">软件工程</td>
+                        <td  style="width: 200px;">
+                            <button class="btn btn-success" ><a onclick="return confirm('确定要拒绝么')" href="updateProductCategory.jsp?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">拒绝</a></button>
+                            <button class="btn btn-warning" style="margin-left: 20px;"><a onclick="return confirm('确定要接受么')" href="#?ID=${category.getID()}" style="text-decoration: none;color:  #fff;">接受</a></button>
+                        </td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

@@ -69,7 +69,7 @@ public class Admin extends AbstrAdmin {
 
     @Override
     public void setTelephone(String telephone) {
-        this.Telephone=Telephone;
+        this.Telephone=telephone;
 
     }
 

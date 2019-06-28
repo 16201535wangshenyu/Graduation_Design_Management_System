@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>教室查看所有课题</title>
+</head>
+<body>
+
+<div style="margin: 0 auto;width: 80%;height: 800px;">
+
+    <div style="margin: 0 auto;width: 90%;height: 400px;margin-left: 5%;">
+        <div style="float: left;width: 10%;padding-right: 3%">课题名称</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div style="float: left;width: 10%;padding-right: 3%">所属专业</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div style="float: left;width: 15%;padding-right: 3%">课题等级</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div style="float: left;width: 10%;padding-right: 6%">课题等级</div>
+        <div style="float: left;width: 5%;">操作</div>
+    </div>
+
+
+    <div th:each="subject,subjectStat : ${subjectList}">
+
+        <div th:if="${subject.name!=null}" th:text="${subject.name}" style="float: left;width: 10%;padding-right: 3%">机器人舞蹈</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div th:if="${subject.Profession!=null}" th:text="${subject.Profession}" style="float: left;width: 10%;padding-right: 3%">软件工程</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div th:if="${subject.degree!=null}" style="float: left;width: 10%;padding-right: 3%">五星级别</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div th:if="${subject.status!=null}" style="float: left;width: 6%;padding-right: 3%">课题状态</div>
+        <div style="float: left;width: 3%;padding-right: 3%">|</div>
+        <div style="float: left;width: 10%;"><button type="button">提交</button></div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
