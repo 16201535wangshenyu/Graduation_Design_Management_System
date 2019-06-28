@@ -9,6 +9,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 @Controller
 @RequestMapping("/teacher")
 public class TeacherLoginController implements WebMvcConfigurer {

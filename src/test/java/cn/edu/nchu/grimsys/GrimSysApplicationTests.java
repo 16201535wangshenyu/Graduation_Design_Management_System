@@ -9,6 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/**
+ *   162015班  第11组
+ *   毕设信息管理系统--模块
+ *   @author：
+ *   date：2019-6-
+ *   主要功能说明：
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GrimSysApplicationTests {

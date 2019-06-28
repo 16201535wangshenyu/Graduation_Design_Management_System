@@ -17,7 +17,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 @Controller
 @RequestMapping("/admin")
 public class AdminLoginController implements WebMvcConfigurer {

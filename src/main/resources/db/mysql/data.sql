@@ -1,5 +1,11 @@
 USE `gradu_design_sys`;
-
+/**
+  *162015班  第11组
+  *毕设信息管理系统--模块
+  *@author：
+  *date：2019-6-
+  *主要功能说明：
+/
 /*Table structure for table `admin` */
 
 DROP TABLE IF EXISTS `admin`;
@@ -311,3 +317,75 @@ CREATE TABLE `teacher` (
   `IDcard_number` varchar(20) DEFAULT NULL COMMENT '证件号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create view adminView
+AS
+select * from admin;
+
+create view admin_group_operView
+as
+select * from admin_group_oper;
+
+create view admin_stu_operview
+as
+select * from admin_stu_oper;
+
+create view admin_tea_operview
+as
+select * from admin_tea_oper;
+
+create view defense_groupview
+as
+select * from defense_group;
+
+create view fileview
+as
+select * from file;
+
+create view gradeview
+as
+select * from grade;
+
+create view group_stu_defenseview
+as
+select * from group_stu_defense;
+
+create view group_tea_formview
+as
+select * from group_tea_form;
+
+create view stu_subject_selectview
+as
+select * from stu_subject_select;
+
+create view stu_task_submitview
+as
+select * from stu_task_submit;
+
+create view stu_tea_both_choiceview
+as
+select * from stu_tea_both_choice;
+
+create view studentview
+as
+select * from student;
+
+create view subjectview
+as
+select * from subject;
+
+create view taskview
+as
+select * from task;
+
+create view tea_subject_declareview
+as
+select * from tea_subject_declare;
+
+create view tea_task_createview
+as
+select * from tea_task_create;
+
+create view teacherview
+as
+select * from teacher;
