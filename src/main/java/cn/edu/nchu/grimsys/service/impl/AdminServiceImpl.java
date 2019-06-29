@@ -55,7 +55,9 @@ public class AdminServiceImpl implements AdminService {
      */
 
     public boolean updateAdmin(Admin user){
-        return  adminMapper.updateAdmin(user);
+
+        return
+                adminMapper.updateAdmin(user);
     }
 
 }

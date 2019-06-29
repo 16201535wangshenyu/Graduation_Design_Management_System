@@ -20,18 +20,16 @@
     <update id="updateAdmin" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdmin">
          update admin
          <set>
-             <if test="admin!=null">
-                 name=#{admin.name},
-                 gender=#{admin.gender},
-                 Birthday=#{admin.Birthday},
-                 Faculties=#{admin.Faculties},
-                 employ_time=#{admin.employ_time},
-                 Profession_title=#{admin.Profession_title},
-                 Telephone=#{admin.Telephone},
-                 IDcard_type=#{admin.IDcard_type},
-                 IDcard_number=#{admin.IDcard_number},
-                 password=#{admin.password}
-             </if>
+             name=#{admin.name},
+             gender=#{admin.gender},
+             Birthday=#{admin.Birthday},
+             Faculties=#{admin.Faculties},
+             employ_time=#{admin.employ_time},
+             Profession_title=#{admin.Profession_title},
+             Telephone=#{admin.Telephone},
+             IDcard_type=#{admin.IDcard_type},
+             IDcard_number=#{admin.IDcard_number},
+             password=#{admin.password}
          </set>
         <where>
             id=#{admin.id}

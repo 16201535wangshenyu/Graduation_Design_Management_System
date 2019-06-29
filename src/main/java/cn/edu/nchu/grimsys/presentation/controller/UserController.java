@@ -31,12 +31,12 @@ public class UserController implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //管理员
-        /*registry.addViewController("/admin-index").setViewName("/admin/adminIndex");*/
-        registry.addViewController("/admin-info-update").setViewName("/admin/admin-info-update");
-        registry.addViewController("/admin-info-view").setViewName("/admin/admin-info-view");
-        registry.addViewController("/admin-search-notice").setViewName("/admin/admin-search-notice");
-        registry.addViewController("/admin-search-student").setViewName("/admin/admin-search-student");
-        registry.addViewController("/admin-search-teacher").setViewName("/admin/admin-search-teacher");
+        /*registry.addViewController("/admin/admin-index").setViewName("/admin/adminIndex");*/
+        registry.addViewController("/admin/admin-info-view").setViewName("/admin/admin-info-view");
+        /*registry.addViewController("/admin/admin-info-update").setViewName("/admin/admin-info-update");*/
+        registry.addViewController("/admin/admin-search-notice").setViewName("/admin/admin-search-notice");
+        registry.addViewController("/admin/admin-search-student").setViewName("/admin/admin-search-student");
+        registry.addViewController("/admin/admin-search-teacher").setViewName("/admin/admin-search-teacher");
 
 
         //学生
@@ -91,11 +91,10 @@ public class UserController implements WebMvcConfigurer {
 
         //登陆
 
-
-
-
-
     }
+
+
+
     @RequestMapping(value="/login",method=RequestMethod.GET)
     private String login(Student student,Teacher teacher,Admin admin){
 

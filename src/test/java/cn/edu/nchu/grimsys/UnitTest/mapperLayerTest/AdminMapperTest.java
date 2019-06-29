@@ -55,7 +55,7 @@ public class AdminMapperTest {
         admin.setIDcard_number("身份证");
         admin.setIDcard_type("111");
 
-        adminMapper.updateAdmin(admin);
+        System.out.println(adminMapper.updateAdmin(admin));
     }
 
     @Test

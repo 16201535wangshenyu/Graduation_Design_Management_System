@@ -27,45 +27,68 @@
 		  </ul>
 		  <div class="layui-tab-content">
 		    <div class="layui-tab-item updateinfo layui-show">
-		    	<form class="layui-form"  style="width: 90%;padding-top: 20px;">
+
+		    	<form  class="layui-form" th:action="@{/admin/updateAdmin}" th:object="${admin}" method="post" style="width: 90%;padding-top: 20px;">
 				  <div class="layui-form-item">
 				    <label class="layui-form-label">ID：</label>
 				    <div class="layui-input-block">
-				      <input type="text" th:value="${session.admin.getId()}" name="id" disabled autocomplete="off" class="layui-input layui-disabled">
+
+				      <input type="text" th:value="${session.admin.getId()}"    disabled autocomplete="off" class="layui-input layui-disabled">
 				    </div>
 				  </div>
+
+					<input name="Birthday" type="hidden" th:value="${session.admin.getBirthday()}">
+					<input name="employ_time" type="hidden" th:value="${session.admin.getEmploy_time()}">
+					<input name="IDcard_type" type="hidden" th:value="${session.admin.getIDcard_type()}">
+					<input name="password" type="hidden" th:value="${session.admin.getPassword()}">
+
+
 				  <div class="layui-form-item">
-				    <label class="layui-form-label">用户名：</label>
+				    <label for="username" class="layui-form-label">姓名：</label>
 				    <div class="layui-input-block" for="username">
-				      <input type="text" name="username"
+				      <input type="text"
 							 id="username"
 							 disabled autocomplete="off"
-							 class="layui-input layui-disabled" th:value="${session.admin.getName()}">
+							 class="layui-input layui-disabled" th:value="${session.admin.getName()}" >
 				    </div>
 				  </div>
+
 				   <div class="layui-form-item">
-				    <label class="layui-form-label">姓名：</label>
+				    <label for="gender" class="layui-form-label">性别：</label>
 				    <div class="layui-input-block">
-					   <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="未知">
+					   <input type="text" id="gender" name="gender" th:field="*{gender}" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
 				   </div>
 				  </div>
 				  <div class="layui-form-item">
-				    <label class="layui-form-label">邮箱：</label>
+				    <label class="layui-form-label" for="Faculties">院系：</label>
 				    <div class="layui-input-block">
-				      <input type="text" name="email" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="5303588521@qq.com">
+				      <input type="text" id="Faculties"  th:field="*{faculties}" name="Faculties" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="5303588521@qq.com">
 				    </div>
 				  </div>
 				  <div class="layui-form-item layui-form-text">
-				    <label class="layui-form-label">备注：</label>
+				    <label class="layui-form-label" for="Profession_title">职称：</label>
 				    <div class="layui-input-block">
-				      <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+						<input type="text" id="Profession_title"  th:field="*{profession_title}"   name="Profession_title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="巴拉巴拉">
 				    </div>
 				  </div>
-				  <div class="layui-form-item">
-				    <div class="layui-input-block">
-				      <button class="layui-btn layui-btn-normal" lay-submit lay-filter="adminInfo">立即提交</button>
-				    </div>
-				  </div>
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label" for="Telephone">联系方式：</label>
+						<div class="layui-input-block">
+							<input type="text" id="Telephone"th:field="*{telephone}"  name="Profession_title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="巴拉巴拉">
+						</div>
+					</div>
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label" for="IDcard_number">身份证号：</label>
+						<div class="layui-input-block">
+							<input type="text" id="IDcard_number"th:field="*{IDcard_number}"  name="Profession_title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="巴拉巴拉">
+						</div>
+					</div>
+
+					<div class="layui-form-item" style="float: right;">
+						<div class="layui-input-block">
+							<button class="layui-btn layui-btn-normal" lay-submit lay-filter="adminPassword">立即提交</button>
+						</div>
+					</div>
 				</form>
 		    </div>
 
@@ -74,9 +97,12 @@
 				  <div class="layui-tab-item updatepassword">
 					  <form class="layui-form" v style="width: 90%;padding-top: 20px;">
 						  <div class="layui-form-item">
-							  <label class="layui-form-label">用户名：</label>
-							  <div class="layui-input-block">
-								  <input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="admin">
+							  <label for="username" class="layui-form-label">姓名：</label>
+							  <div class="layui-input-block" for="username">
+								  <input type="text" name="username"
+
+										 disabled autocomplete="off"
+										 class="layui-input layui-disabled" th:value="${session.admin.getName()}">
 							  </div>
 						  </div>
 						  <div class="layui-form-item">
@@ -99,7 +125,7 @@
 						  </div>
 						  <div class="layui-form-item">
 							  <div class="layui-input-block">
-								  <button class="layui-btn layui-btn-normal" lay-submit lay-filter="adminPassword">立即提交</button>
+								  <button class="layui-btn layui-btn-normal" lay-submit lay-filter="adminPassword">立即修改</button>
 							  </div>
 						  </div>
 					  </form>

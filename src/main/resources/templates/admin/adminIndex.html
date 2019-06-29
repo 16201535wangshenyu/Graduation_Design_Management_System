@@ -130,9 +130,9 @@ function menuScroll(num){
     <div class="main">
         <!--个人信息管理-->
         <iframe style="display: none"
-              name="right" id="rightMain1" src="/admin-info-view" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+              name="right" id="rightMain1" src="/admin/admin-info-view" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
         <iframe style="display: none"
-              name="right" id="rightMain2" src="/admin-info-update" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
+              name="right" id="rightMain2" src="/admin/admin-info-update" frameborder="no" scrolling="auto" width="100%" height="auto" allowtransparency="true"></iframe>
 
 
 
@@ -175,6 +175,7 @@ function menuScroll(num){
 
     </div>
     <!--主要操作界面结束-->
+    <span id="current"style="display: none" th:text="${session.current}"></span>
 
 
 
