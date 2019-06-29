@@ -30,7 +30,7 @@ public class Stu_tea_to_way_choiceServiceImpl implements Stu_tea_to_way_choiceSe
 
     @Override
     public boolean selectTeacher(AbstrStudent student, String teacherId) {
-        stuTeaBothChoice.setSno(student.getId());
+        stuTeaBothChoice.setSno(student.getId()+"");
         stuTeaBothChoice.setTno(teacherId);
 
         return  stu_tea_both_choiceMapper.addStuTeaBothChoice(stuTeaBothChoice);

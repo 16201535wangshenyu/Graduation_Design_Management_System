@@ -35,7 +35,7 @@ public class ChooseBringStudents implements WebMvcConfigurer {
     public String choseStudent(String studentId, Model model, HttpSession session){
       AbstrTeacher teacher =(Teacher)session.getAttribute("teacher") ;
 
-        if(stu_tea_to_way_choiceService.selecStudent(studentId,teacher.getId())) {
+        if(stu_tea_to_way_choiceService.selecStudent(studentId,teacher.getId()+"")) {
             return "";
 
         }else

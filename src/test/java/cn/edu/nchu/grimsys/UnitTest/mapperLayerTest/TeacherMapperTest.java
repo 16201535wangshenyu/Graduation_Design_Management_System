@@ -20,7 +20,7 @@ public class TeacherMapperTest {
 
     @Test
     public void  insertTeacherTest() {
-        teacher.setId(1);
+        teacher.setId("1");
         teacher.setPassword(StringHelper.encrypt("123456"));
         teacher.setName("丁兴宇");
         teacher.setGender("男");
@@ -40,7 +40,7 @@ public class TeacherMapperTest {
     }
     @Test
     public void  updateTeacherTest() {
-        teacher.setId(1);
+        teacher.setId("1");
         teacher.setPassword(StringHelper.encrypt("123456"));
         teacher.setName("丁兴宇");
         teacher.setGender("男");

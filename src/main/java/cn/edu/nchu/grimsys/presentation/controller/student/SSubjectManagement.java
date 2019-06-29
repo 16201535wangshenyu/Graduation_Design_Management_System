@@ -75,7 +75,7 @@ public class SSubjectManagement implements WebMvcConfigurer {
     @RequestMapping("/chooseSubject/{SubjectId}")
     public String chooseSubject(@PathVariable("SubjectId") String SubjectId, Model model, HttpSession session){
         AbstrStudent student=(Student)session.getAttribute("student");
-        if(service.chooseSubject(SubjectId,student.getId())){
+        if(service.chooseSubject(SubjectId,student.getId()+"")){
 
             return "redirect:/WithdrawalSubject/"+SubjectId;
         }else{

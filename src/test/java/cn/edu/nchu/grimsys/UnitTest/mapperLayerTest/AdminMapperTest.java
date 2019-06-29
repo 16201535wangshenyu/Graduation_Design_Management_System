@@ -21,7 +21,7 @@ public class AdminMapperTest {
 
     @Test
     public void insertAdminTest() {
-        admin.setId(3);
+        admin.setId("3");
         admin.setPassword(StringHelper.encrypt("123456"));
         admin.setName("丁兴宇");
         admin.setGender("男");
@@ -43,7 +43,7 @@ public class AdminMapperTest {
 
     @Test
     public void updateAdminTest(){
-        admin.setId(3);
+        admin.setId("3");
         admin.setPassword(StringHelper.encrypt("123456"));
         admin.setName("丁兴宇");
         admin.setGender("男");

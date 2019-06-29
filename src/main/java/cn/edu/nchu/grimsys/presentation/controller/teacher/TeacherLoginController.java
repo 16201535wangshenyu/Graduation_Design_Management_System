@@ -46,10 +46,7 @@ public class TeacherLoginController implements WebMvcConfigurer {
     @PostMapping("/login")
     public ModelAndView logincheck(ModelAndView modelAndView, HttpServletRequest request) {
 
-
         modelAndView.addObject("","");
-
-
         return modelAndView;
     }
     /**
@@ -66,9 +63,9 @@ public class TeacherLoginController implements WebMvcConfigurer {
             return  "index";
         }
         else
-        if(teacherService.validUser(user.getId(),user.getPassword())) {
+        if(teacherService.validUser(user.getId()+"",user.getPassword())) {
             System.out.println("2凉凉！");
-            AbstrTeacher teacher = teacherService.loadTeacherInfo(user.getId());
+            AbstrTeacher teacher = teacherService.loadTeacherInfo(user.getId()+"");
             session.setAttribute("teacher",teacher);
             return "redirect:admin/index";
         }

@@ -1,6 +1,7 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdmin;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Admin;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -18,7 +19,7 @@ public interface AdminMapper {
      * @param adminNum
      * @return
      */
-   AbstrAdmin selectAdminByid(@Param("adminNum") Integer adminNum);
+   Admin selectAdminByid(@Param("adminNum") Integer adminNum);
 
     /**
      * 向管理员表增加管理员记录

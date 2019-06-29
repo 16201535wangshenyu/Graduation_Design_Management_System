@@ -64,9 +64,9 @@ public class StudentLoginController implements WebMvcConfigurer{
             return  "index";
         }
         else
-        if(studentService.validUser(user.getId(),user.getPassword())) {
+        if(studentService.validUser(user.getId()+"",user.getPassword())) {
             System.out.println("2凉凉！");
-            AbstrStudent student = studentService.loadAdminInfo(user.getId());
+            AbstrStudent student = studentService.loadAdminInfo(user.getId()+"");
             session.setAttribute("student",student);
             return "redirect:admin/index";
         }

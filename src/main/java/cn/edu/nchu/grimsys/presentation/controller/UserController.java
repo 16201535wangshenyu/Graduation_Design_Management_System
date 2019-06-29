@@ -30,17 +30,83 @@ import java.io.IOException;
 public class UserController implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/adminIndex").setViewName("/admin/adminIndex");
-        registry.addViewController("/studentIndex").setViewName("/student/studentIndex");
-        registry.addViewController("/teacherIndex").setViewName("/teacher/teacherIndex");
+        //管理员
+        /*registry.addViewController("/admin-index").setViewName("/admin/adminIndex");*/
+        registry.addViewController("/admin-info-update").setViewName("/admin/admin-info-update");
+        registry.addViewController("/admin-info-view").setViewName("/admin/admin-info-view");
+        registry.addViewController("/admin-search-notice").setViewName("/admin/admin-search-notice");
+        registry.addViewController("/admin-search-student").setViewName("/admin/admin-search-student");
+        registry.addViewController("/admin-search-teacher").setViewName("/admin/admin-search-teacher");
+
+
+        //学生
+        registry.addViewController("/student-index").setViewName("/student/studentIndex");
+        registry.addViewController("/student-info-view").setViewName("/student/student-info-view");
+        registry.addViewController("/student-info-update").setViewName("/student/student-info-update");
+
+
+        registry.addViewController("/student-view-subject").setViewName("/student/Student-load-subject");
+        registry.addViewController("/student-choose-subject").setViewName("/student/ChooseSubject");
+
+
+        registry.addViewController("/LoadAllTask").setViewName("/student/LoadAllTask");
+        registry.addViewController("/SubmitTask").setViewName("/student/SubmitTask");
+        registry.addViewController("/UpdateTask").setViewName("/student/UpdateTask");
+        registry.addViewController("/SearchAnnouncement").setViewName("/student/SearchAnnouncement");
+        registry.addViewController("/ChooseTeacher").setViewName("/student/ChooseTeacher");
+
+
+        //教师
+        registry.addViewController("/teacher-index").setViewName("/teacher/teacherIndex");
+
+        registry.addViewController("/teacher-info-view").setViewName("/teacher/info-management/teacher-info-view");
+        registry.addViewController("/teacher-info-update").setViewName("/teacher/info-management/teacher-info-update");
+
+
+        registry.addViewController("/teacher-create-subject").setViewName("/teacher/subject-management/teacher-create-subject");
+        registry.addViewController("/teacher-update-subject").setViewName("/teacher/subject-management/teacher-update-subject");
+        registry.addViewController("/teacher-loadall-subject").setViewName("/teacher/subject-management/teacher-loadall-subject");
+        registry.addViewController("/teacher-publish-subject").setViewName("/teacher/subject-management/teacher-publish-subject");
+        registry.addViewController("/teacher-submit-subject").setViewName("/teacher/subject-management/teacher-submit-subject");
+
+
+
+        registry.addViewController("/teacher-add-task").setViewName("/teacher/task-management/teacher-add-task");
+        registry.addViewController("/teacher-delete-task").setViewName("/teacher/task-management/teacher-delete-task");
+        registry.addViewController("/teacher-update-task").setViewName("/teacher/task-management/teacher-update-task");
+        registry.addViewController("/teacher-loadall-task").setViewName("/teacher/task-management/teacher-loadall-task");
+
+
+
+        registry.addViewController("/teacher-choose-student").setViewName("/teacher/teacher-choose-student");
+        registry.addViewController("/teacher-load-pronnouncment").setViewName("/teacher/teacher-load-pronnouncment");
+
+
+        registry.addViewController("/teacher-add-defense").setViewName("/teacher/defense-management/teacher-add-defense");
+        registry.addViewController("/teacher-delete-defense").setViewName("/teacher/defense-management/teacher-delete-defense");
+        registry.addViewController("/teacher-loadall-defense").setViewName("/teacher/defense-management/teacher-loadall-defense");
+        registry.addViewController("/teacher-update-defense").setViewName("/teacher/defense-management/teacher-update-defense");
+
+
+
+        //登陆
+
+
+
+
+
     }
     @RequestMapping(value="/login",method=RequestMethod.GET)
     private String login(Student student,Teacher teacher,Admin admin){
 
         return "index";
     }
+  /*  @RequestMapping(value="/login",method=RequestMethod.POST)
+    private String login2(Student student,Teacher teacher,Admin admin){
 
-
+        return "index";
+    }
+*/
 
     /**
      * 更换验证码图片

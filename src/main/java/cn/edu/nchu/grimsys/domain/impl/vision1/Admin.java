@@ -3,7 +3,6 @@ package cn.edu.nchu.grimsys.domain.impl.vision1;
 import cn.edu.nchu.grimsys.domain.AbstrAdmin;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 /**
@@ -23,7 +22,6 @@ public class Admin extends AbstrAdmin {
     public String getId() {
         return id;
     }
-
     @Override
     public void setId(String id) {
         this.id=id;

@@ -21,7 +21,7 @@ public class StudentMapperTest
 
     @Test
     public void  insertStudentTest() {
-        student.setId(5);
+        student.setId("5");
         student.setPassword(StringHelper.encrypt("123456"));
         student.setName("丁兴宇");
         student.setGender("男");
@@ -42,7 +42,7 @@ public class StudentMapperTest
     }
     @Test
     public void  updateStudentTest() {
-        student.setId(5);
+        student.setId("5");
         student.setPassword(StringHelper.encrypt("123456"));
         student.setName("丁兴宇");
         student.setGender("男");

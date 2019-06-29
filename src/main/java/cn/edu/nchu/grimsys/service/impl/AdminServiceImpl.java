@@ -44,7 +44,7 @@ public class AdminServiceImpl implements AdminService {
      * @return
      */
     public AbstrAdmin loadAdminInfo(String username){
-        AbstrAdmin admin=adminMapper.selectAdminByid("username");
+        AbstrAdmin admin=adminMapper.selectAdminByid(Integer.parseInt(username));
         return  admin;
     }
 

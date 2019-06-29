@@ -13,10 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TaskMapperTest {
     @Autowired
     private TaskMapper taskMapper;
-
     @Autowired
     private AbstrTask task;
-
     @Test
     public void  addTaskTest() {
         task.setTask_no("1000");
