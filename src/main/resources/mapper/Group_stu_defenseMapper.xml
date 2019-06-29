@@ -4,16 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Group_stu_defenseMapper">
 
+    <!--
+     162015班 第11组
+     毕设信息管理系统-模块
+     @author ：
+     date：
+     主要功能说明：
+    -->
 
     <!--添加一条答辩小组-学生-答辩记录-->
-    <insert id="addGroupStuDefense" parameterType="cn.edu.nchu.grimsys.domain.AbstrGroupStuDefense">
+    <insert id="addGroupStuDefense" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.GroupStuDefenseImpl">
         insert into group_stu_defense(group_id,sno,res_grade)
         values (#{groupStuDefense.group_id},#{groupStuDefense.sno},
                 #{groupStuDefense.res_grade})
     </insert>
 
     <!--修改答辩小组-学生-答辩记录-->
-    <update id="updateGroupStuDefense" parameterType="cn.edu.nchu.grimsys.domain.AbstrGroupStuDefense">
+    <update id="updateGroupStuDefense" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.GroupStuDefenseImpl">
         update group_stu_defense set
         res_grade = #{groupStuDefense.res_grade}
         where group_id = #{groupStuDefense.group_id}
@@ -27,13 +34,13 @@
     </delete>
 
     <!--根据答辩小组编号查询答辩小组答辩的所有学生对象-->
-    <select id="selectGroupStuDefenseByGId" resultType="cn.edu.nchu.grimsys.domain.AbstrGroupStuDefense">
+    <select id="selectGroupStuDefenseByGId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.GroupStuDefenseImpl">
         select * from group_stu_defense
         where group_id = #{group_id}
     </select>
 
     <!--根据学号查询学生答辩详情-->
-    <select id="selectGroupStuDefenseByTno" resultType="cn.edu.nchu.grimsys.domain.AbstrGroupStuDefense">
+    <select id="selectGroupStuDefenseByTno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.GroupStuDefenseImpl">
         select * from group_stu_defense
         where sno = #{sno}
     </select>

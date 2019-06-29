@@ -2,11 +2,19 @@ package cn.edu.nchu.grimsys.dao.datasource;
 
 
 import cn.edu.nchu.grimsys.domain.AbstrAdminGroupOper;
+import cn.edu.nchu.grimsys.domain.impl.vision1.AdminGroupOperImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Mapper
 public interface AdminGroupOperMapper {
 
@@ -33,7 +41,8 @@ public interface AdminGroupOperMapper {
      * @param ano
      * @return
      */
-    List<AbstrAdminGroupOper> selectAdminGroupOperByAno (@Param("ano") String  ano);
+    List<AdminGroupOperImpl> selectAdminGroupOperByAno (@Param("ano") String  ano);
+
 
 
     /**
@@ -42,7 +51,7 @@ public interface AdminGroupOperMapper {
      * @param group_no
      * @return
      */
-    List<AbstrAdminGroupOper> selectAdminGroupOperByGId (@Param("ano") String  ano,@Param("group_no") String group_no);
+    List<AdminGroupOperImpl> selectAdminGroupOperByGId (@Param("ano") String  ano, @Param("group_no") String group_no);
 
 
 }

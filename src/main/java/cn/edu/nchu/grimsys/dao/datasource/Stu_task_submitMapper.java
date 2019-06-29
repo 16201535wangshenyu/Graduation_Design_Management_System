@@ -1,9 +1,17 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrStuTaskSubmit;
+import cn.edu.nchu.grimsys.domain.impl.vision1.StuTaskSubmit;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Mapper
 public interface Stu_task_submitMapper {
 
@@ -39,5 +47,5 @@ public interface Stu_task_submitMapper {
      * @param task_no
      * @return
      */
-    AbstrStuTaskSubmit selectStuTaskSubmit(@Param("sno") String sno,@Param("task_no") String task_no);
+    StuTaskSubmit selectStuTaskSubmit(@Param("sno") String sno, @Param("task_no") String task_no);
 }

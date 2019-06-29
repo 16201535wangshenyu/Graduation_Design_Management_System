@@ -4,15 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.TaskMapper">
 
+    <!--
+     162015班 第11组
+     毕设信息管理系统-模块
+     @author ：
+     date：
+     主要功能说明：
+    -->
 
     <!--增减任务-->
-    <insert id="addTask" parameterType="cn.edu.nchu.grimsys.domain.AbstrTask">
+    <insert id="addTask" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.TaskImpl">
         insert into task(task_no,task_name,task_content)
         values (#{task.task_no},#{task.task_name},#{task.task_content})
     </insert>
 
     <!--修改任务-->
-    <update id="updateTaskContent" parameterType="cn.edu.nchu.grimsys.domain.AbstrTask">
+    <update id="updateTaskContent" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.TaskImpl">
         update task set
         task_name = #{task.task_name},
         task_content = #{task.task_content}
@@ -22,13 +29,26 @@
     <!--删除任务-->
     <delete id="deleteTask">
       delete from task
-      where id = #{task_no}
+      where task_no= #{task_no}
     </delete>
 
     <!--根据任务号查询任务-->
-    <select id="loadTaskByTaskId" resultType="cn.edu.nchu.grimsys.domain.AbstrTask">
+    <select id="loadTaskByTaskId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.TaskImpl">
         select *
         from task
         where task_no = #{task_no}
+    </select>
+    <select id="loadAllTaskBySno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.TaskImpl">
+        select *
+        from task
+        where task_no in
+              (
+              select task_no
+              from tea_task_create
+              where tno in(
+                      select tno
+                      from stu_tea_both_choice
+                      where sno=#{studentId}
+                      ) )
     </select>
 </mapper>

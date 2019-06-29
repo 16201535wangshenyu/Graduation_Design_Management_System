@@ -4,9 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Admin_tea_operMapper">
 
+    <!--
+     162015班 第11组
+     毕设信息管理系统-模块
+     @author ：
+     date：
+     主要功能说明：
+    -->
 
     <!--添加一条管理员对教师的操作日志-->
-    <insert id="addAdminTeaOper" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper">
+    <insert id="addAdminTeaOper" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.AdminTeaOperImpl">
         insert into admin_tea_oper(ano,tno,operate_time,operate_type)
         values (#{adminTeaOper.ano},#{adminTeaOper.tno},
                 #{adminTeaOper.operate_time},#{adminTeaOper.operate_type})
@@ -23,14 +30,14 @@
 
 
     <!--查询指定管理员对所有教师工号的教师的日志操作记录-->
-    <select id="selectAdminTeaOperByAno" resultType="cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper">
+    <select id="selectAdminTeaOperByAno" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.AdminTeaOperImpl">
         select * from admin_tea_oper
         where ano = #{ano}
     </select>
 
 
     <!--查询指定管理员对指定教师工号的教师的日志操作记录-->
-    <select id="selectAdminTeaOperByGId" resultType="cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper">
+    <select id="selectAdminTeaOperByGId" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.AdminTeaOperImpl">
         select * from admin_tea_oper
         where ano = #{ano}
         and tno = #{tno}

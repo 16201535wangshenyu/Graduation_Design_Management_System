@@ -1,9 +1,17 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrTeaTaskCreate;
+import cn.edu.nchu.grimsys.domain.impl.vision1.TeaTaskCreateImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Mapper
 public interface Tea_task_createMapper {
 
@@ -13,7 +21,7 @@ public interface Tea_task_createMapper {
      * @param teaTaskCreate
      * @return
      */
-    boolean addTeaTaskCreate(@Param("teaTaskCreate")AbstrTeaTaskCreate teaTaskCreate);
+    boolean addTeaTaskCreate(@Param("teaTaskCreate") AbstrTeaTaskCreate teaTaskCreate);
 
 
     /**
@@ -39,6 +47,6 @@ public interface Tea_task_createMapper {
      * @param task_no
      * @return
      */
-    AbstrTeaTaskCreate selectTeaTaskCreate(@Param("tno") String tno,@Param("task_no") String task_no);
+    TeaTaskCreateImpl selectTeaTaskCreate(@Param("tno") String tno, @Param("task_no") String task_no);
 
 }

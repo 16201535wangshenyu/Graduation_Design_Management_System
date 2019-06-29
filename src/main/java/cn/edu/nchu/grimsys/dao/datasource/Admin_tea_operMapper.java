@@ -1,11 +1,19 @@
 package cn.edu.nchu.grimsys.dao.datasource;
 
 import cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper;
+import cn.edu.nchu.grimsys.domain.impl.vision1.AdminTeaOperImpl;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Mapper
 public interface Admin_tea_operMapper {
 
@@ -32,7 +40,7 @@ public interface Admin_tea_operMapper {
      * @param ano
      * @return
      */
-    List<AbstrAdminTeaOper> selectAdminTeaOperByAno (@Param("ano") String  ano);
+    List<AdminTeaOperImpl> selectAdminTeaOperByAno (@Param("ano") String  ano);
 
 
     /**
@@ -41,6 +49,6 @@ public interface Admin_tea_operMapper {
      * @param tno
      * @return
      */
-    List<AbstrAdminTeaOper> selectAdminTeaOperByGId (@Param("ano") String  ano,@Param("tno") String tno);
+    List<AdminTeaOperImpl> selectAdminTeaOperByGId (@Param("ano") String  ano, @Param("tno") String tno);
 
 }

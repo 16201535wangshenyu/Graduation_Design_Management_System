@@ -1,5 +1,12 @@
 package cn.edu.nchu.grimsys.domain;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 public abstract class AbstrAdminTeaOper {
 
     protected String ano;/*管理员编号*/

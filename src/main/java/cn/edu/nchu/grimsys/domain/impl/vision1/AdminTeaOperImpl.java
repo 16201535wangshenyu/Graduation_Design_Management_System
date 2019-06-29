@@ -3,6 +3,13 @@ package cn.edu.nchu.grimsys.domain.impl.vision1;
 import cn.edu.nchu.grimsys.domain.AbstrAdminTeaOper;
 import org.springframework.stereotype.Component;
 
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 @Component
 
 public class AdminTeaOperImpl extends AbstrAdminTeaOper {

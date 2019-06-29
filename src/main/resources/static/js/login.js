@@ -6,6 +6,9 @@ $(document).ready(function(){
         $('div.tab_box > div').eq(index).show().siblings().hide();
     });
 });
+
+
+
 $(function(){
     /*学生登录信息验证*/
     $("#stu_username_hide").focus(function(){
@@ -44,14 +47,14 @@ $(function(){
             $(this).val('输入验证码');
         }
     });
-/*    $(".stu_login_error").Validform({
+    $(".stu_login_error").Validform({
         tiptype:function(msg,o,cssctl){
             var objtip=$(".stu_error_box");
             cssctl(objtip,o.type);
             objtip.text(msg);
         },
         ajaxPost:true
-    });*/
+    });
     /*导师登录信息验证*/
     $("#tea_username_hide").focus(function(){
         var username = $(this).val();
@@ -89,14 +92,14 @@ $(function(){
             $(this).val('输入验证码');
         }
     });
-  /*  $(".tea_login_error").Validform({
+    $(".tea_login_error").Validform({
         tiptype:function(msg,o,cssctl){
             var objtip=$(".tea_error_box");
             cssctl(objtip,o.type);
             objtip.text(msg);
         },
         ajaxPost:true
-    });*/
+    });
     /*教务登录信息验证*/
     $("#sec_username_hide").focus(function(){
         var username = $(this).val();
@@ -134,14 +137,14 @@ $(function(){
             $(this).val('输入验证码');
         }
     });
-  /*  $(".sec_login_error").Validform({
+    $(".sec_login_error").Validform({
         tiptype:function(msg,o,cssctl){
             var objtip=$(".sec_error_box");
             cssctl(objtip,o.type);
             objtip.text(msg);
         },
         ajaxPost:true
-    });*/
+    });
 });
 $(function(){
     $(".screenbg ul li").each(function(){

@@ -9,7 +9,13 @@ import java.util.Base64;
 import java.util.UUID;
 
 
-
+/**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
 /**
  * 这是一个用来操作字符串的工具类
  */

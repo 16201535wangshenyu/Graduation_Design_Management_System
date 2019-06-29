@@ -13,6 +13,13 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 /**
+ * 162015班 第11组
+ * 毕设信息管理系统--模块
+ * @author ：
+ * date：
+ * 主要功能说明：
+ */
+/**
  * 这是一个 与图形、图像 有关的工具类
  */
 public final class GraphicHelper {

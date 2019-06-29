@@ -4,9 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.Stu_subject_selectMapper">
 
+    <!--
+     162015班 第11组
+     毕设信息管理系统-模块
+     @author ：
+     date：
+     主要功能说明：
+    -->
 
     <!--学生选题后，添加一条记录到选题表-->
-    <insert id="addStuSubjectSelect" parameterType="cn.edu.nchu.grimsys.domain.AbstrStuSubjectSelect">
+    <insert id="addStuSubjectSelect" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.StuSubjectSelectImpl">
         insert into stu_subject_select(sno,cno,select_time)
         values (#{stuSubjectSelect.sno},#{stuSubjectSelect.cno},#{stuSubjectSelect.select_time})
     </insert>
@@ -23,7 +30,7 @@
 
 
     <!--查询一条学生选题记录-->
-    <select id="selectStuSubjectSelect" resultType="cn.edu.nchu.grimsys.domain.AbstrStuSubjectSelect">
+    <select id="selectStuSubjectSelect" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.StuSubjectSelectImpl">
          select * from stu_subject_select
          where sno = #{sno}
          and cno = #{cno}
