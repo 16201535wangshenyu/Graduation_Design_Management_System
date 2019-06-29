@@ -95,7 +95,7 @@
         <div name="username">
           <label>教务号：</label>
           <input type="text" id="sec_username_hide" th:field="*{id}" name="id" value="输入教务号" />
-          <div style="border:1px solid red">
+          <div>
             <span th:if="${#fields.hasErrors('id')}"  th:errors="*{id}" style="color: red">password Error</span>
           </div>
         </div>

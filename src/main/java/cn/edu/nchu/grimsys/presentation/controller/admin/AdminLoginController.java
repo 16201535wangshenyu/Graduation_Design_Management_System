@@ -72,9 +72,7 @@ public class AdminLoginController implements WebMvcConfigurer {
             System.out.println("2凉凉！");
             System.out.println("ttttt"+admin.getId());
             AbstrAdmin abstrAdmin = adminService.loadAdminInfo(admin.getId()+"");
-            System.out.println("mmmmmmm"+abstrAdmin.getId());
-            System.out.println("sssssssssssssssssssssss"+abstrAdmin.getName());
-
+            System.out.println("mmmmmmm"+abstrAdmin.getTelephone());
             session.setAttribute("admin",abstrAdmin);
 
             return "redirect:admin-index";
