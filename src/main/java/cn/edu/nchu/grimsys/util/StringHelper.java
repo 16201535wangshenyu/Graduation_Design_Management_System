@@ -33,6 +33,7 @@ public final class StringHelper {
 	 * @return 当字符串为 null 或 为 空白、空串 时返回 true
 	 */
 	public static final boolean empty( String source ) {
+
 		return source == null || source.trim().isEmpty()  ;
 	}
 	

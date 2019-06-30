@@ -1,8 +1,12 @@
 package cn.edu.nchu.grimsys.presentation.controller.student;
 
+import cn.edu.nchu.grimsys.domain.AbstrAdmin;
+import cn.edu.nchu.grimsys.domain.AbstrStudent;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Admin;
 import cn.edu.nchu.grimsys.domain.impl.vision1.Student;
 import cn.edu.nchu.grimsys.service.StudentService;
 import cn.edu.nchu.grimsys.service.TeacherService;
+import cn.edu.nchu.grimsys.util.StringHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -51,5 +56,51 @@ public class SPersonalInforManagement implements WebMvcConfigurer {
         }else{//失败！
             return  " ";
         }
+    }
+
+    /**
+     * 修改学生个人密码
+     * @param session
+     * @return
+     */
+    @PostMapping("/updateStudentPass")
+    public String updateAdminPass(Model model, HttpSession session, HttpServletRequest request){
+        AbstrStudent student = (AbstrStudent)session.getAttribute("student");
+        String oldPassword=request.getParameter("oldPassword");
+        String newPassword=request.getParameter("newPassword");
+        String confirmPassword=request.getParameter("confirmPassword");
+        String realPassword=student.getPassword();
+        if(StringHelper.empty(oldPassword)||StringHelper.empty(newPassword)){
+            if(StringHelper.encrypt(realPassword).equals(oldPassword)){
+                if(newPassword.equals(confirmPassword)) {
+                    student.setPassword(newPassword);
+                    if (studentService.updateStudent((Student)student)){
+                        session.setAttribute("admin",student);
+                        return "redirect:/admin/admin-back";
+
+
+                    }else{
+                        model.addAttribute("admin",student);
+                        model.addAttribute("errorMsg","数据库更新失败！");
+                        return  "/admin/admin-info-update";
+                    }
+                }else{
+                    model.addAttribute("admin",student);
+                    model.addAttribute("errorMsg","两次密码输入不一致错误！");
+                    return  "/admin/admin-info-update";
+                }
+
+
+            }else{
+                model.addAttribute("admin",student);
+                model.addAttribute("errorMsg","原密码错误！");
+                return  "/admin/admin-info-update";
+            }
+        }else{
+            model.addAttribute("admin",student);
+            model.addAttribute("errorMsg","选项均不能为空！");
+            return  "/admin/admin-info-update";
+        }
+
     }
 }
