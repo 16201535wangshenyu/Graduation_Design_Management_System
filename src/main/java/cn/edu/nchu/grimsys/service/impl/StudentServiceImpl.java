@@ -32,6 +32,8 @@ public class StudentServiceImpl implements StudentService {
 
     public boolean validUser(String id, String password){
         AbstrStudent student=studentMapper.selectStudentById(id);
+        System.out.println("密码："+student.getPassword());
+        System.out.println("密码："+StringHelper.encrypt(password));
         if(student==null)
             return false;
         else

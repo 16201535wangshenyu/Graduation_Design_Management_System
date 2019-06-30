@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
  */
 public abstract class AbstrUser {
 
-    @Size(min=6, max=6)
+
     protected  String id;/**用户编号**/
 
     protected  String name;/**用户姓名**/
@@ -26,12 +26,11 @@ public abstract class AbstrUser {
 
     protected  String gender;/**性别**/
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
     protected  String Birthday;/**出生年月**/
 
     protected  String Faculties;/**院系**/
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+
     protected  String employ_time;/**任职时间**/
 
     protected  String Profession_title;/**职称**/
@@ -46,7 +45,6 @@ public abstract class AbstrUser {
 
     protected  String Profession;/**专业**/
 
-    @Pattern(regexp="[0-9]{6}",message="* 请输入6位数字")
     protected  String Sclass;/**班级**/
 
     public abstract String getId() ;

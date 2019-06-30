@@ -60,7 +60,7 @@ public class UserController implements WebMvcConfigurer {
         registry.addViewController("/teacher-index").setViewName("/teacher/teacherIndex");
 
         registry.addViewController("/teacher-info-view").setViewName("/teacher/info-management/teacher-info-view");
-        registry.addViewController("/teacher-info-update").setViewName("/teacher/info-management/teacher-info-update");
+
 
 
         registry.addViewController("/teacher-create-subject").setViewName("/teacher/subject-management/teacher-create-subject");

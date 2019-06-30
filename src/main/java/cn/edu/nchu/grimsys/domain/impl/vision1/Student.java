@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 /**
  * 162015班 第11组
@@ -17,7 +18,7 @@ import javax.validation.constraints.Pattern;
 public class Student extends AbstrStudent {
     @Pattern(regexp="[0-9]{8}",message="* 请输入8位数字")
     protected  String id;/**用户编号**/
-    @NotBlank(message="密码不能为空!")
+
     protected  String password;/**用户密码**/
     @Override
     public String getId() {
