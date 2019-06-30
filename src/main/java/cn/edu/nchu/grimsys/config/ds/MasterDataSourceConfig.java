@@ -1,3 +1,4 @@
+
 package cn.edu.nchu.grimsys.config.ds;
 
 import com.alibaba.druid.pool.DruidDataSource;
@@ -15,6 +16,13 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
+/**
+ * 162015班  第11组
+ * 毕设信息管理系统--模块
+ * @author：
+ * date：2019-6-
+ * 主要功能说明：
+ */
 @Configuration
 // 扫描 Mapper 接口并容器管理
 @MapperScan(basePackages = MasterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "masterSqlSessionFactory")
@@ -30,7 +38,7 @@ public class MasterDataSourceConfig {
     @Value("${master.datasource.username}")
     private String user;
 
-    @Value("${master.datasource.password}")
+    @Value("19970928beyond..")
     private String password;
 
     @Value("${master.datasource.driverClassName}")
