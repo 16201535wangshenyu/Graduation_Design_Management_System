@@ -63,7 +63,6 @@ public class PersonalInforManagement implements WebMvcConfigurer {
         admin.setEmploy_time(request.getParameter("employ_time"));
         admin.setIDcard_type(request.getParameter("IDcard_type"));
         admin.setPassword(request.getParameter("password"));
-
         if (bindingResult.hasFieldErrors()){//绑定有错
 
             model.addAttribute("admin",admin);
@@ -76,8 +75,9 @@ public class PersonalInforManagement implements WebMvcConfigurer {
 
             System.out.println(admin.getTelephone());
             session.setAttribute("admin",admin);
-            System.out.println("修改成功");
 
+            System.out.println("修改成功");
+            model.addAttribute(admin);
             session.setAttribute("current","info-view");
             //使用在controller中注册的全部路径继续重定向
             return "redirect:/admin/admin-back";//修改成功,返回显示个人信息界面

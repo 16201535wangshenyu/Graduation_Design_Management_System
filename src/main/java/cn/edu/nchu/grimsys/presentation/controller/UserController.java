@@ -32,11 +32,11 @@ public class UserController implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         //管理员
         /*registry.addViewController("/admin/admin-index").setViewName("/admin/adminIndex");*/
-        registry.addViewController("/admin/admin-info-view").setViewName("/admin/admin-info-view");
+        registry.addViewController("/admin-info-view").setViewName("/admin/admin-info-view");
         /*registry.addViewController("/admin/admin-info-update").setViewName("/admin/admin-info-update");*/
-        registry.addViewController("/admin/admin-search-notice").setViewName("/admin/admin-search-notice");
-        registry.addViewController("/admin/admin-search-student").setViewName("/admin/admin-search-student");
-        registry.addViewController("/admin/admin-search-teacher").setViewName("/admin/admin-search-teacher");
+        registry.addViewController("/admin-search-notice").setViewName("/admin/admin-search-notice");
+        registry.addViewController("/admin-search-student").setViewName("/admin/admin-search-student");
+        registry.addViewController("/admin-search-teacher").setViewName("/admin/admin-search-teacher");
 
 
         //学生
@@ -60,7 +60,7 @@ public class UserController implements WebMvcConfigurer {
         registry.addViewController("/teacher-index").setViewName("/teacher/teacherIndex");
 
         registry.addViewController("/teacher-info-view").setViewName("/teacher/info-management/teacher-info-view");
-
+        registry.addViewController("/teacher-info-update").setViewName("/teacher/info-management/teacher-info-update");
 
 
         registry.addViewController("/teacher-create-subject").setViewName("/teacher/subject-management/teacher-create-subject");
