@@ -4,51 +4,44 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.edu.nchu.grimsys.dao.datasource.AdminMapper">
 
-    <!--
-         162015班 第11组
-         毕设信息管理系统-模块
-         @author ：
-         date：
-         主要功能说明：
-        -->
 
-    <insert id="insertAdmin" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdmin">
-        insert into admin(id,name,gender,Birthday,Faculties,employ_time,Profession_title,Telephone,IDcard_type,IDcard_number,password)
-        values (#{admin.id},#{admin.name},#{admin.gender},#{admin.Birthday},#{admin.Faculties},#{admin.employ_time},#{admin.Profession_title},#{admin.Telephone},#{admin.IDcard_type},#{admin.IDcard_number},#{admin.password})
+    <insert id="insertAdmin">
+        insert into admin(id,name,gender,Birthday,Faculties,employ_time,Profession_title,Telephone,IDcard_type,IDcard_type,IDcard_number,password)
+        values (#{id},#{name},#{gender},#{Birthday},#{Faculties},#{employ_time},#{Profession_title},#{Telephone},#{IDcard_type},#{IDcard_number},#{password})
 
     </insert>
     <update id="updateAdmin" parameterType="cn.edu.nchu.grimsys.domain.AbstrAdmin">
          update admin
          <set>
-             name=#{admin.name},
-             gender=#{admin.gender},
-             Birthday=#{admin.Birthday},
-             Faculties=#{admin.Faculties},
-             employ_time=#{admin.employ_time},
-             Profession_title=#{admin.Profession_title},
-             Telephone=#{admin.Telephone},
-             IDcard_type=#{admin.IDcard_type},
-             IDcard_number=#{admin.IDcard_number},
-             password=#{admin.password}
+             <if test="admin!=null">
+                 name=#{name},
+                 gender=#{gender},
+                 Birthday=#{Birthday},
+                 Faculties=#{Faculties},
+                 employ_time=#{employ_time},
+                 Profession_title=#{Profession_title},
+                 Telephone=#{Telephone},
+                 IDcard_type=#{IDcard_type},
+                 IDcard_number=#{IDcard_number},
+                 password=#{password}
+
+             </if>
          </set>
         <where>
-            id=#{admin.id}
+            id=#{id}
         </where>
     </update>
 
+    <delete id="deleteAdminByid">
+
+    </delete>
     <delete id="deleteAdminById">
         delete from admin
         where id = #{adminNum}
     </delete>
 
 
-    <!--<select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.Admin" >
-        select *
-        from admin
-        where id = #{adminNum}
-    </select>-->
-
-    <select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.impl.vision1.Admin" >
+    <select id="selectAdminByid" resultType="cn.edu.nchu.grimsys.domain.AbstrAdmin">
         select *
         from admin
         where id = #{adminNum}
