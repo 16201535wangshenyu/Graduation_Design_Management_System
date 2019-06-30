@@ -33,28 +33,6 @@ public class PersonalInforManagement implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
 
     }
-    /**
-     * 修改管理员个人信息
-     * @param user
-     * @param model
-     * @param bindingResult
-     * @param session
-     * @return
-     */
-    @PostMapping("/updateAdmin")
-    public String updateAdmin(@Validated Admin user, Model model, BindingResult bindingResult, HttpSession session){
-        if (bindingResult.hasFieldErrors()){//绑定有错
-            model.addAttribute(user);
-            System.out.println("凉凉！");
-            return  " ";
-        }else
-        if(adminService.updateAdmin(user)){
-            return "";//修改成功
-        }else{//失败！
-            return  " ";
-        }
-    }
-
 
 
 
