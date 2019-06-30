@@ -2,7 +2,9 @@ package cn.edu.nchu.grimsys.presentation.controller.teacher;
 
 import cn.edu.nchu.grimsys.domain.AbstrStudent;
 import cn.edu.nchu.grimsys.domain.AbstrTeacher;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Admin;
 import cn.edu.nchu.grimsys.domain.impl.vision1.Student;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Teacher;
 import cn.edu.nchu.grimsys.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,43 +37,38 @@ public class TeacherLoginController implements WebMvcConfigurer {
     private TeacherService teacherService;
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/teacherIndex").setViewName("/teacher/teacherIndex");
+        registry.addViewController("/teacher/teacher-index").setViewName("/teacher/teacherIndex");
 
 
     }
-    /**
-     * 教师登录界面
-     * @return
-     */
-    @PostMapping("/login")
-    public ModelAndView logincheck(ModelAndView modelAndView, HttpServletRequest request) {
 
-        modelAndView.addObject("","");
-        return modelAndView;
-    }
     /**
      * 验证教师登录
      * @return
      */
-    @PostMapping("/student/login")
-    public String logincheck(@Validated Student user, Model model, BindingResult bindingResult, HttpSession session, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @PostMapping("/login")
+    public String logincheck(@Validated Teacher teacher, BindingResult bindingResult ,Model model,HttpSession session) {
 
 
         if (bindingResult.hasFieldErrors()){
-            model.addAttribute("admin",user);
+            model.addAttribute(teacher);
+            model.addAttribute(new Admin());
+            model.addAttribute(new Student());
             /* System.out.println("凉凉！");*/
             return  "index";
         }
         else
-        if(teacherService.validUser(user.getId()+"",user.getPassword())) {
+        if(teacherService.validUser(teacher.getId()+"",teacher.getPassword())) {
             System.out.println("2凉凉！");
-            AbstrTeacher teacher = teacherService.loadTeacherInfo(user.getId()+"");
-            session.setAttribute("teacher",teacher);
-            return "redirect:admin/index";
+            AbstrTeacher abstrTeacher = teacherService.loadTeacherInfo(teacher.getId()+"");
+            session.setAttribute("teacher",abstrTeacher);
+            return "redirect:teacher-index";
         }
         else{
             System.out.println("3凉凉！");
-            model.addAttribute("errorMsg","账号或密码错误！");
+            model.addAttribute(new Admin());
+            model.addAttribute(new Student());
+            model.addAttribute("TeacherLoginErrorMsg","账号或密码错误！");
             return "index";
         }
 

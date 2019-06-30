@@ -1,7 +1,9 @@
 package cn.edu.nchu.grimsys.presentation.controller.student;
 
 import cn.edu.nchu.grimsys.domain.AbstrStudent;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Admin;
 import cn.edu.nchu.grimsys.domain.impl.vision1.Student;
+import cn.edu.nchu.grimsys.domain.impl.vision1.Teacher;
 import cn.edu.nchu.grimsys.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,32 +37,22 @@ public class StudentLoginController implements WebMvcConfigurer{
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/studentIndex").setViewName("/student/studentIndex");
+        registry.addViewController("/student/student-index").setViewName("/student/studentIndex");
 
-    }
-    /**
-     * 学生登录界面
-     * @return
-     */
-    @PostMapping("/login")
-    public ModelAndView logincheck(ModelAndView modelAndView, HttpServletRequest request) {
-
-        modelAndView.addObject("","");
-
-        return modelAndView;
     }
 
     /**
      * 验证学生登录
      * @return
      */
-    @PostMapping("/student/login")
-    public String logincheck(@Validated Student user, Model model, BindingResult bindingResult, HttpSession session, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+    @PostMapping("/login")
+    public String logincheck(@Validated Student user, BindingResult bindingResult ,Model model,HttpSession session) {
         if (bindingResult.hasFieldErrors()){
-            model.addAttribute("admin",user);
+            model.addAttribute(user);
            /* System.out.println("凉凉！");*/
+            model.addAttribute(new Admin());
+            model.addAttribute(new Teacher());
+            System.out.println("字段值有错误！");
             return  "index";
         }
         else
@@ -68,11 +60,13 @@ public class StudentLoginController implements WebMvcConfigurer{
             System.out.println("2凉凉！");
             AbstrStudent student = studentService.loadAdminInfo(user.getId()+"");
             session.setAttribute("student",student);
-            return "redirect:admin/index";
+            return "redirect:student-index";
         }
         else{
             System.out.println("3凉凉！");
-            model.addAttribute("errorMsg","账号或密码错误！");
+            model.addAttribute(new Teacher());
+            model.addAttribute(new Admin());
+            model.addAttribute("StudentLoginErrorMsg","账号或密码错误！");
             return "index";
         }
 

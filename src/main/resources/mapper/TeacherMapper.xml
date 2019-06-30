@@ -14,11 +14,11 @@
 
     <!-- 添加教师-->
     <insert id="insertTeacher" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.Teacher">
-        insert into teacher(id,name,gender,Birthday,Faculties,Profession,employ_time,Pofession_title,Telephone,IDcard_type,IDcard_number)
+        insert into teacher(id,name,gender,Birthday,Faculties,Profession,employ_time,Pofession_title,Telephone,IDcard_type,IDcard_number,password)
         values (#{teacher.id},#{teacher.name},#{teacher.gender},#{teacher.Birthday},
                 #{teacher.Faculties},#{teacher.Profession},#{teacher.employ_time},
-                #{teacher.Pofession_title},#{teacher.Telephone},
-                #{teacher.IDcard_type},#{teacher.IDcard_number})
+                #{teacher.Profession_title},#{teacher.Telephone},
+                #{teacher.IDcard_type},#{teacher.IDcard_number},#{teacher.password})
     </insert>
 
 
@@ -26,21 +26,21 @@
     <update id="updateTeacher" parameterType="cn.edu.nchu.grimsys.domain.impl.vision1.Teacher">
         update teacher
         <set>
-            <if test="teacher!=null">
                 name = #{teacher.name},
                 gender = #{teacher.gender},
                 Birthday = #{teacher.Birthday},
                 Faculties = #{teacher.Faculties},
                 employ_time = #{teacher.employ_time},
-                Profession_title = #{teacher.Profession_title},
+                Pofession_title = #{teacher.profession_title},
                 Telephone = #{teacher.Telephone},
                 IDcard_type = #{teacher.IDcard_type},
                 IDcard_number = #{teacher.IDcard_number},
                 Profession = #{teacher.Profession},
-            </if>
+                password = #{teacher.password}
+
         </set>
         <where>
-            teacher.id = #{teacher.teacher.id}
+            teacher.id = #{teacher.id}
         </where>
     </update>
 

@@ -37,17 +37,22 @@
       <form th:action="@{/student/login}" th:if="${student!=null}"th:object="${student}" method="post" class="stu_login_error">
         <div name="username">
           <label>学&nbsp;&nbsp;&nbsp;号：</label>
-          <input type="text" th:field="*{id}" id="stu_username_hide" name="username" value="输入学号"   />
+          <input type="text" th:field="*{id}" id="stu_username_hide" name="username" th:default="输入学号"   />
+          <div>
           <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red">Account Error</span>
+          </div>
+
         </div>
         <div name="password">
           <label>密&nbsp;&nbsp;&nbsp;码：</label>
-          <input type="password" th:field="*{password}" id="stu_password_hide" name="password" value="输入密码"  />
+          <input type="password" th:field="*{password}" id="stu_password_hide" name="password" th:default="输入密码"  />
+          <div>
           <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red">password Error</span>
+          </div>
         </div>
         <div name="code">
           <label>验证码：</label>
-          <input type="text" id="stu_code_hide" name="code"  value="输入验证码" nullmsg="验证码不能为空！" errormsg="验证码有4位数！" sucmsg="验证码验证通过！"/>
+          <input type="text" id="stu_code_hide" name="code"   th:default="输入验证码" />
           <img id="code1"  style="border:1px solid black;margin-top:10px;width:150px" th:class="code" th:src="@{/images/codeImg/code.jpg}" title="点击更换" alt="验证码占位图"/> </div>
 
         <div name="remember">
@@ -66,17 +71,21 @@
       <form th:action="@{/teacher/login}" th:if="${teacher!=null}" th:object="${teacher}" th:method="post" class="tea_login_error">
         <div name="username">
           <label>教工号：</label>
-          <input type="text" th:field="*{id}" id="tea_username_hide" name="username" value="输入教工号" nullmsg="教工号不能为空！" datatype="s6-18" errormsg="教工号范围在6~18个字符之间！" sucmsg="教工号验证通过！"/>
+          <input type="text" th:field="*{id}" id="tea_username_hide" name="username"  th:default="输入教工号" />
+          <div>
           <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red">password Error</span>
+          </div>
         </div>
         <div name="password">
           <label>密&nbsp;&nbsp;&nbsp;码：</label>
-          <input type="password"  th:field="*{password}" id="tea_password_hide" name="password" value="输入密码" nullmsg="密码不能为空！" datatype="*6-16" errormsg="密码范围在6~16位之间！" sucmsg="密码验证通过！"/>
-          <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red">password Error</span>
+          <input type="password"  th:field="*{password}" id="tea_password_hide" name="password"  th:default="输入密码" />
+          <div>
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red">password Error</span>
+          </div>
         </div>
         <div >
           <label>验证码：</label>
-          <input type="text" id="tea_code_hide" name="code"  value="输入验证码" nullmsg="验证码不能为空！" errormsg="验证码有4位数！" sucmsg="验证码验证通过！"/>
+          <input type="text" id="tea_code_hide" name="code"   th:default="输入验证码" nullmsg="验证码不能为空！" errormsg="验证码有4位数！" sucmsg="验证码验证通过！"/>
           <img id="code2" style="border:1px solid black;margin-top:10px;width:150px" class="code" th:src="@{/images/codeImg/code.jpg}" title="点击更换" alt="验证码占位图"/> </div>
         <div name="remember">
           <input type="checkbox" name="remember">
@@ -102,7 +111,9 @@
         <div name="password">
           <label>密&nbsp;&nbsp;&nbsp;码：</label>
           <input type="password" id="sec_password_hide" th:field="*{password}" name="password" value="输入密码" />
+          <div>
           <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red">password Error</span>
+          </div>
         </div>
         <div name="code">
           <label>验证码：</label>
@@ -137,9 +148,5 @@
         alert("dasdsa");
         window.location.assign('/requestCode');
     }
-    /*document.getElementById("code1").onclick=function(){
-        alert("dasdsa");
-        window.location.assign('/requestCode');
-    }*/
 </script>
 </html>

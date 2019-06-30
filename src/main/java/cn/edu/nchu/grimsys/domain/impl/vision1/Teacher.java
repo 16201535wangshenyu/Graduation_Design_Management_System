@@ -20,6 +20,8 @@ public class Teacher extends AbstrTeacher {
     protected  String id;/**用户编号**/
     @NotBlank(message="密码不能为空!")
     protected  String password;/**用户密码**/
+    @Pattern(regexp="[0-9]{11}",message="* 请输入11位数字")
+    protected  String Telephone;/**手机号**/
 
     @Override
     public String getId() {
@@ -118,6 +120,8 @@ public class Teacher extends AbstrTeacher {
     public void setEmploy_time(String employ_time) {
         this.employ_time = employ_time;
     }
+
+    @Override
     public String getProfession_title() {
         return Profession_title;
     }
@@ -125,6 +129,7 @@ public class Teacher extends AbstrTeacher {
     public void setProfession_title(String profession_title) {
         Profession_title = profession_title;
     }
+
     public String getProfession() {
         return Profession;
     }

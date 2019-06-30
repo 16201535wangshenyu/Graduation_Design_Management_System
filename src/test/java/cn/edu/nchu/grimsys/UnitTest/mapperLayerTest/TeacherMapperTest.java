@@ -20,13 +20,14 @@ public class TeacherMapperTest {
 
     @Test
     public void  insertTeacherTest() {
-        teacher.setId("1");
-        teacher.setPassword(StringHelper.encrypt("123456"));
-        teacher.setName("丁兴宇");
+        teacher.setId("16201535");
+        teacher.setPassword(StringHelper.encrypt("123"));
+        teacher.setName("王慎余");
         teacher.setGender("男");
         teacher.setBirthday("1995-11-03 16:44:22");
         teacher.setFaculties("软件工程");
         teacher.setEmploy_time("2016-9-1");
+        teacher.setProfession("人工智能");
         teacher.setProfession_title("教师");
         teacher.setTelephone("18296378888");
         teacher.setIDcard_number("身份证");
@@ -40,9 +41,9 @@ public class TeacherMapperTest {
     }
     @Test
     public void  updateTeacherTest() {
-        teacher.setId("1");
-        teacher.setPassword(StringHelper.encrypt("123456"));
-        teacher.setName("丁兴宇");
+        teacher.setId("16201535");
+        teacher.setPassword(StringHelper.encrypt("123"));
+        teacher.setName("王慎瑜");
         teacher.setGender("男");
         teacher.setBirthday("1997-11-03 16:44:22");
         teacher.setFaculties("软件工程");

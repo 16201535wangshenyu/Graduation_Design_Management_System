@@ -35,7 +35,7 @@
 				    </div>
 				  </div>
 				  <div class="layui-form-item">
-				    <label class="layui-form-label">用户名：</label>
+				    <label class="layui-form-label">姓名：</label>
 				    <div class="layui-input-block" for="username">
 				      <input type="text" name="username"
 							 id="username"
@@ -44,23 +44,12 @@
 				    </div>
 				  </div>
 				   <div class="layui-form-item">
-				    <label class="layui-form-label">姓名：</label>
+				    <label class="layui-form-label">电话：</label>
 				    <div class="layui-input-block">
-					   <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="未知">
+					   <input type="text" name="name" required  lay-verify="required" placeholder="请输入电话号码" autocomplete="off" class="layui-input" value="未知">
 				   </div>
 				  </div>
-				  <div class="layui-form-item">
-				    <label class="layui-form-label">邮箱：</label>
-				    <div class="layui-input-block">
-				      <input type="text" name="email" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="5303588521@qq.com">
-				    </div>
-				  </div>
-				  <div class="layui-form-item layui-form-text">
-				    <label class="layui-form-label">备注：</label>
-				    <div class="layui-input-block">
-				      <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
-				    </div>
-				  </div>
+
 				  <div class="layui-form-item">
 				    <div class="layui-input-block">
 				      <button class="layui-btn layui-btn-normal" lay-submit lay-filter="adminInfo">立即提交</button>
@@ -72,33 +61,33 @@
 
 
 				  <div class="layui-tab-item updatepassword">
-					  <form class="layui-form" v style="width: 90%;padding-top: 20px;">
+					  <form class="layui-form"  style="width: 90%;padding-top: 20px;">
 						  <div class="layui-form-item">
 							  <label class="layui-form-label">用户名：</label>
 							  <div class="layui-input-block">
-								  <input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" value="admin">
+								  <input type="text" name="username" disabled autocomplete="off" class="layui-input layui-disabled" th:value="${session.admin.getName()}">
 							  </div>
 						  </div>
 						  <div class="layui-form-item">
-							  <label class="layui-form-label">旧密码：</label>
+							  <label class="layui-form-label" style="width:160px">旧密码：</label>
 							  <div class="layui-input-block">
 								  <input type="password" name="password1" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 							  </div>
 						  </div>
 						  <div class="layui-form-item">
-							  <label class="layui-form-label">新密码：</label>
+							  <label class="layui-form-label" style="width:160px">新密码：</label>
 							  <div class="layui-input-block">
 								  <input type="password" name="password2" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 							  </div>
 						  </div>
 						  <div class="layui-form-item">
-							  <label class="layui-form-label">重复密码：</label>
+							  <label class="layui-form-label" style="width:160px">重复密码：</label>
 							  <div class="layui-input-block">
 								  <input type="password" name="password3" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 							  </div>
 						  </div>
 						  <div class="layui-form-item">
-							  <div class="layui-input-block">
+							  <div class="layui-input-block" >
 								  <button class="layui-btn layui-btn-normal" lay-submit lay-filter="adminPassword">立即提交</button>
 							  </div>
 						  </div>
@@ -109,7 +98,6 @@
 		</div>
 
 
-	<script src="../js/layui.js" type="text/javascript" charset="utf-8"></script>
 	<script>
 		//Demo
 		layui.use(['form','element'], function(){
